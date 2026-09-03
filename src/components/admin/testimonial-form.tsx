@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { saveTestimonial, type SaveState } from "@/app/admin/(dashboard)/temoignages/actions";
-import { AdminCard, Field, fieldClass } from "@/components/admin/ui";
+import { AdminCard, Field, Select, fieldClass } from "@/components/admin/ui";
 import type { Database } from "@/lib/supabase/types";
 
 type Testimonial = Database["public"]["Tables"]["testimonials"]["Row"];
@@ -55,18 +55,14 @@ export function TestimonialForm({
       <AdminCard className="mt-6">
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Client">
-            <select
-              name="client_id"
-              defaultValue={testimonial?.client_id ?? ""}
-              className={fieldClass}
-            >
+            <Select name="client_id" defaultValue={testimonial?.client_id ?? ""}>
               <option value="">—</option>
               {clients.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.nom}
                 </option>
               ))}
-            </select>
+            </Select>
           </Field>
           <Field label="Nom de l'auteur">
             <input
@@ -96,14 +92,10 @@ export function TestimonialForm({
             />
           </Field>
           <Field label="Statut">
-            <select
-              name="statut"
-              defaultValue={testimonial?.statut ?? "brouillon"}
-              className={fieldClass}
-            >
+            <Select name="statut" defaultValue={testimonial?.statut ?? "brouillon"}>
               <option value="brouillon">Brouillon</option>
               <option value="publie">Publié</option>
-            </select>
+            </Select>
           </Field>
           <Field label="Citation" span2>
             <textarea

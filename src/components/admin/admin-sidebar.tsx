@@ -43,8 +43,10 @@ export function AdminSidebar({ initials, name }: { initials: string; name: strin
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-signal/20 text-[12px] font-semibold text-signal">
           {initials}
         </span>
-        <div className="flex-1">
-          <p className="text-[13px] font-medium text-bone">{name}</p>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-[13px] font-medium text-bone" title={name}>
+            {name}
+          </p>
           <p className="text-[11.5px] text-cool">Administrateur</p>
         </div>
         <form action={signOut}>

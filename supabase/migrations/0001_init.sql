@@ -101,7 +101,8 @@ insert into services (pole, titre, description, benefice, ordre) values
   ('dev', 'Logiciels et applications', 'Outils métier, applications de gestion et solutions mobiles adaptées à votre organisation.', 'Moins de tâches manuelles, des données fiables.', 2),
   ('dev', 'Maintenance, refonte, conseil', 'Reprise d''un site existant, mises à jour de sécurité, optimisation des performances et accompagnement digital.', 'Un site qui reste rapide, sûr et à jour.', 3),
   ('batiment', 'Dessin de projet bâtiment', 'Plans d''architecture, plans d''exécution et pièces graphiques pour vos projets de construction.', 'Des documents exploitables directement sur chantier.', 1),
-  ('batiment', 'Études et assistance technique', 'Études de génie civil, métrés, notes techniques et appui au suivi de chantier.', 'Des choix techniques justifiés et des coûts maîtrisés.', 2);
+  ('batiment', 'Études et assistance technique', 'Études de génie civil, métrés, notes techniques et appui au suivi de chantier.', 'Des choix techniques justifiés et des coûts maîtrisés.', 2),
+  ('batiment', 'Permis de construire', 'Constitution du dossier technique et accompagnement jusqu''à l''obtention du permis de construire.', 'Un dossier complet, conforme et déposé dans les règles.', 3);
 
 -- settings (table à ligne unique) ----------------------------------------------
 

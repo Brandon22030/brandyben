@@ -19,7 +19,7 @@ export async function SiteFooter() {
       />
 
       <div className="relative mx-auto flex max-w-[1240px] flex-col gap-10">
-        <div className="grid grid-cols-2 gap-9 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-9 [&>div]:min-w-0 sm:gap-9 md:grid-cols-4">
           <div className="flex flex-col gap-[14px]">
             <div className="flex items-center gap-[10px]">
               <Logo size={24} />
@@ -43,12 +43,12 @@ export async function SiteFooter() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-[11px]">
+          <div className="flex min-w-0 flex-col gap-[11px]">
             <p className="text-[11.5px] uppercase tracking-[0.2em] text-[#5A6072]">Contact</p>
-            <p className="text-[14px] leading-[1.85] text-[#8B93A7]">
+            <p className="break-words text-[14px] leading-[1.85] text-[#8B93A7]">
               {telephone}
               <br />
-              {email}
+              <span className="break-all">{email}</span>
               <br />
               Agontinkon, 8ᵉ arr., Cotonou
             </p>

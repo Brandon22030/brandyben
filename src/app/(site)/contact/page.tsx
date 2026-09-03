@@ -36,6 +36,10 @@ export default async function ContactPage() {
             <p className="text-[16px] font-semibold text-bone">{telephone}</p>
           </div>
           <div className="bg-[#0A0C11] px-6 py-5">
+            <p className="mb-[5px] text-[12.5px] text-[#6B7183]">Téléphone (Bennett)</p>
+            <p className="text-[16px] font-semibold text-bone">+229 01 61 70 40 70</p>
+          </div>
+          <div className="bg-[#0A0C11] px-6 py-5">
             <p className="mb-[5px] text-[12.5px] text-[#6B7183]">E-mail</p>
             <p className="break-all text-[16px] font-semibold text-bone">{email}</p>
           </div>

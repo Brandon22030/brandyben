@@ -147,6 +147,22 @@ export interface Database {
         Update: Partial<Database["public"]["Tables"]["services"]["Row"]>;
         Relationships: [];
       };
+      etapes_methode: {
+        Row: {
+          id: string;
+          pole: PoleMetier;
+          titre: string;
+          description: string | null;
+          duree: string | null;
+          ordre: number;
+        };
+        Insert: Partial<Database["public"]["Tables"]["etapes_methode"]["Row"]> & {
+          pole: PoleMetier;
+          titre: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["etapes_methode"]["Row"]>;
+        Relationships: [];
+      };
       settings: {
         Row: {
           id: number;

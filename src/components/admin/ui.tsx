@@ -1,8 +1,24 @@
-import type { ReactNode } from "react";
+import type { ReactNode, SelectHTMLAttributes } from "react";
+import { ChevronDown } from "lucide-react";
 import type { Pole, StatutContenu, StatutDemande } from "@/lib/supabase/types";
 
 export const fieldClass =
   "w-full rounded-[10px] border border-white/[0.13] bg-white/[0.03] px-3.5 py-2.5 text-[14px] text-bone placeholder:text-[#5A6072] outline-none focus:border-signal/60";
+
+export function Select({ className = "", ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
+  return (
+    <div className="relative">
+      <select
+        {...props}
+        className={`${fieldClass} appearance-none pr-9 ${className}`}
+      />
+      <ChevronDown
+        size={16}
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-cool"
+      />
+    </div>
+  );
+}
 
 export function AdminCard({
   title,

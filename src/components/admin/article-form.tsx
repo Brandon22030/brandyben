@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { savePost, type SaveState } from "@/app/admin/(dashboard)/articles/actions";
-import { AdminCard, Field, fieldClass } from "@/components/admin/ui";
+import { AdminCard, Field, Select, fieldClass } from "@/components/admin/ui";
 import type { Database } from "@/lib/supabase/types";
 
 type Post = Database["public"]["Tables"]["posts"]["Row"];
@@ -68,10 +68,10 @@ export function ArticleForm({ post }: { post?: Post }) {
             />
           </Field>
           <Field label="Statut" span2>
-            <select name="statut" defaultValue={post?.statut ?? "brouillon"} className={fieldClass}>
+            <Select name="statut" defaultValue={post?.statut ?? "brouillon"}>
               <option value="brouillon">Brouillon</option>
               <option value="publie">Publié</option>
-            </select>
+            </Select>
           </Field>
           <Field label="Extrait" span2>
             <textarea

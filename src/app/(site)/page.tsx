@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { GridBackdrop } from "@/components/grid-backdrop";
 import { HairlineGrid, HairlineCell } from "@/components/hairline-grid";
+import { MethodSection } from "@/components/method-section";
 import { createClient } from "@/lib/supabase/server";
 import { getSettings } from "@/lib/settings";
 
@@ -37,32 +38,6 @@ const ATOUTS = [
   },
 ];
 
-const ETAPES = [
-  {
-    num: "01",
-    title: "Cadrage",
-    desc: "Nous clarifions votre besoin, vos contenus et vos objectifs.",
-    duree: "1 semaine",
-  },
-  {
-    num: "02",
-    title: "Maquettes",
-    desc: "Proposition de design, allers-retours et validation avec vous.",
-    duree: "1 à 2 semaines",
-  },
-  {
-    num: "03",
-    title: "Développement",
-    desc: "Intégration des pages, des fonctionnalités et de vos contenus.",
-    duree: "2 à 3 semaines",
-  },
-  {
-    num: "04",
-    title: "Tests et mise en ligne",
-    desc: "Vérifications techniques, mobile, formulaires, puis publication.",
-    duree: "1 semaine",
-  },
-];
 
 export default async function HomePage() {
   const supabase = await createClient();
@@ -73,6 +48,11 @@ export default async function HomePage() {
     .select("nom")
     .eq("visible_sur_site", true)
     .order("nom");
+
+  const { data: etapesMethode } = await supabase
+    .from("etapes_methode")
+    .select("id, pole, titre, description, duree")
+    .order("ordre");
 
   const telephone = settings?.telephone ?? "+229 01 53 72 90 10";
   const email = settings?.email ?? "brandonmedehou2203@gmail.com";
@@ -321,30 +301,8 @@ export default async function HomePage() {
 
       {/* Méthode */}
       <section className="px-5 pb-[clamp(56px,7vw,110px)] sm:px-[clamp(20px,4vw,40px)]">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-[clamp(28px,4vw,44px)]">
-          <Reveal className="flex max-w-[640px] flex-col gap-[14px]">
-            <p className="text-[11.5px] uppercase tracking-[0.24em] text-[#5A6072]">Méthode</p>
-            <h2 className="text-[clamp(28px,4vw,46px)] font-bold leading-[1.05] tracking-[-0.045em] text-bone">
-              Comment se déroule un projet
-            </h2>
-          </Reveal>
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {ETAPES.map((etape, i) => (
-              <Reveal
-                key={etape.num}
-                delay={i * 60}
-                className="flex flex-col gap-[10px] border-t border-white/[0.14] pt-[22px]"
-              >
-                <p className="text-[34px] font-bold tracking-[-0.05em] text-[#252B39]">
-                  {etape.num}
-                </p>
-                <p className="text-[17px] font-semibold text-bone">{etape.title}</p>
-                <p className="text-[14.5px] leading-[1.6] text-[#8B93A7]">{etape.desc}</p>
-                <p className="text-[12.5px] text-signal">{etape.duree}</p>
-              </Reveal>
-            ))}
-          </div>
+        <div className="mx-auto max-w-[1240px]">
+          <MethodSection etapes={etapesMethode ?? []} />
         </div>
       </section>
 

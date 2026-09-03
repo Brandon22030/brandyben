@@ -21,9 +21,9 @@ export default async function AdminDashboardLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  const displayName =
-    (user?.user_metadata?.full_name as string | undefined) ?? user?.email ?? "Administrateur";
-  const initials = initialsFrom(displayName) || "BB";
+  const fullName = user?.user_metadata?.full_name as string | undefined;
+  const displayName = fullName ?? user?.email?.split("@")[0] ?? "Administrateur";
+  const initials = initialsFrom(fullName ?? displayName) || "BB";
 
   return (
     <div className="flex min-h-dvh bg-ink">

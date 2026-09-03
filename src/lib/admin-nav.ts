@@ -5,6 +5,7 @@ export const ADMIN_NAV_ITEMS = [
   { label: "Demandes de devis", href: "/admin/demandes" },
   { label: "Témoignages", href: "/admin/temoignages" },
   { label: "Articles", href: "/admin/articles" },
+  { label: "Méthode", href: "/admin/methode" },
   { label: "Médias", href: "/admin/medias" },
   { label: "Paramètres", href: "/admin/parametres" },
 ] as const;

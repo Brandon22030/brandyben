@@ -4,7 +4,7 @@ import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { saveProject, type SaveState } from "@/app/admin/(dashboard)/projets/actions";
-import { AdminCard, Field, fieldClass } from "@/components/admin/ui";
+import { AdminCard, Field, Select, fieldClass } from "@/components/admin/ui";
 import type { Database } from "@/lib/supabase/types";
 
 type Project = Database["public"]["Tables"]["projects"]["Row"];
@@ -76,26 +76,26 @@ export function ProjectForm({
               />
             </Field>
             <Field label="Client">
-              <select name="client_id" defaultValue={project?.client_id ?? ""} className={fieldClass}>
+              <Select name="client_id" defaultValue={project?.client_id ?? ""}>
                 <option value="">—</option>
                 {clients.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.nom}
                   </option>
                 ))}
-              </select>
+              </Select>
             </Field>
             <Field label="Pôle">
-              <select name="pole" defaultValue={project?.pole ?? "dev"} className={fieldClass}>
+              <Select name="pole" defaultValue={project?.pole ?? "dev"}>
                 <option value="dev">Développement web</option>
                 <option value="batiment">Bâtiment</option>
-              </select>
+              </Select>
             </Field>
             <Field label="Statut">
-              <select name="statut" defaultValue={project?.statut ?? "brouillon"} className={fieldClass}>
+              <Select name="statut" defaultValue={project?.statut ?? "brouillon"}>
                 <option value="brouillon">Brouillon</option>
                 <option value="publie">Publié</option>
-              </select>
+              </Select>
             </Field>
             <Field label="Résumé" span2>
               <textarea
