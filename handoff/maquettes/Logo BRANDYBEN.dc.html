@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#07080B; }
+a { color:#4F7CFF; text-decoration:none; }
+a:hover { color:#8FA9FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Instrument Sans',sans-serif; color:#F2F4F8; background:#07080B; padding:72px 56px 104px; display:flex; flex-direction:column; gap:56px; max-width:1240px; margin:0 auto;">
+
+  <div style="display:flex; flex-direction:column; gap:18px; max-width:720px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#6B7183;">Charte de marque · v4 · arc de compas</div>
+    <div style="font-size:52px; font-weight:600; letter-spacing:-0.04em; line-height:1.03;">BRANDYBEN</div>
+    <div style="font-size:16px; line-height:1.68; color:#8B93A7; text-wrap:pretty;">Un pivot posé au sol, une portée tracée jusqu'au point haut. C'est le geste par lequel toute construction commence, et le seul que la marque retienne. Deux pleins, un arc, rien d'autre.</div>
+  </div>
+
+  <div style="border:1px solid rgba(255,255,255,0.10); border-radius:24px; background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.012)); padding:56px; display:flex; flex-direction:column; gap:48px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#6B7183;">Signature principale</div>
+    <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;">
+      <svg width="128" height="128" viewBox="0 0 120 120" fill="none" aria-label="Marque BRANDYBEN">
+        <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+        <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+        <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+      </svg>
+      <div style="display:flex; flex-direction:column; gap:9px;">
+        <div style="font-size:64px; font-weight:700; letter-spacing:-0.05em; line-height:0.94;">BRANDYBEN</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8B93A7;">Concevoir · Calculer · Construire</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:24px;">
+    <div style="flex:1 1 300px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">Construction</div>
+      <div style="background:#0B0D13; border-radius:12px; padding:24px; display:flex; justify-content:center;">
+        <svg width="180" height="180" viewBox="0 0 120 120" fill="none">
+          <path d="M30 6V114M6 96H114" stroke="rgba(79,124,255,0.28)" stroke-width="1" stroke-dasharray="3 4"></path>
+          <path d="M30 96 100 96M30 96 30 26" stroke="rgba(79,124,255,0.45)" stroke-width="1.5"></path>
+          <circle cx="30" cy="96" r="70" stroke="rgba(255,255,255,0.10)" stroke-width="1"></circle>
+          <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+          <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+          <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+          <text x="62" y="108" fill="#4F7CFF" font-size="7" font-family="monospace">r = 70</text>
+        </svg>
+      </div>
+      <div style="font-size:13.5px; line-height:1.6; color:#8B93A7; text-wrap:pretty;">Un quart de cercle de rayon 70 sur une grille de 120. Pivot à (30,96), point haut à (30,26). Épaisseur de trait 10, extrémités rondes. Aucun angle, aucune valeur arbitraire.</div>
+    </div>
+
+    <div style="flex:1 1 300px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">Zone de sécurité</div>
+      <div style="background:#0B0D13; border-radius:12px; padding:24px; display:flex; justify-content:center;">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
+          <rect x="36.9" y="35.6" width="106.2" height="108.8" stroke="rgba(255,184,77,0.4)" stroke-width="1" stroke-dasharray="4 4"></rect>
+          <rect x="53.9" y="52.6" width="72.3" height="74.8" stroke="rgba(255,255,255,0.10)" stroke-width="1"></rect>
+          <g transform="translate(36.9,37.3) scale(0.85)">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+          </g>
+          <path d="M36.9 90H53.9M126.2 90H143.1M90 35.6V52.6M90 127.4V144.4" stroke="rgba(255,184,77,0.55)" stroke-width="1"></path>
+          <text x="41" y="86" fill="#FFB84D" font-size="8" font-family="monospace">x</text>
+          <text x="131" y="86" fill="#FFB84D" font-size="8" font-family="monospace">x</text>
+          <text x="93" y="47" fill="#FFB84D" font-size="8" font-family="monospace">x</text>
+          <text x="93" y="139" fill="#FFB84D" font-size="8" font-family="monospace">x</text>
+        </svg>
+      </div>
+      <div style="font-size:13.5px; line-height:1.6; color:#8B93A7; text-wrap:pretty;">Marge minimale égale au diamètre du pivot (x). Rien ne pénètre cette zone : ni texte, ni image, ni bord de support.</div>
+    </div>
+
+    <div style="flex:1 1 300px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">Tailles minimales</div>
+      <div style="background:#0B0D13; border-radius:12px; padding:24px; display:flex; align-items:flex-end; justify-content:center; gap:26px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="48" height="48" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="11" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="11" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="9" fill="#F2F4F8"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6B7183;">48</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="32" height="32" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="10" fill="#F2F4F8"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6B7183;">32</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="20" height="20" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="14" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="14" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="11" fill="#F2F4F8"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6B7183;">20</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="16" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="16" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="12" fill="#F2F4F8"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6B7183;">16</div>
+        </div>
+      </div>
+      <div style="font-size:13.5px; line-height:1.6; color:#8B93A7; text-wrap:pretty;">Le trait s'épaissit à mesure que le signe rétrécit (10 → 16) pour garder la même densité optique. Sous 16 px, marque seule, pivot monochrome.</div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:22px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#6B7183;">Déclinaisons</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#6B7183;">Horizontale · fond sombre</div>
+        <div style="background:#0E1016; border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:28px; display:flex; align-items:center; gap:14px; min-height:104px;">
+          <svg width="38" height="38" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="11" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="11" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="9" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-size:26px; font-weight:700; letter-spacing:-0.048em;">BRANDYBEN</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#6B7183;">Fond clair</div>
+        <div style="background:#F2F4F8; border-radius:14px; padding:28px; display:flex; align-items:center; gap:14px; min-height:104px;">
+          <svg width="38" height="38" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#07080B" stroke-width="11" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="11" fill="#07080B"></circle>
+            <circle cx="30" cy="26" r="9" fill="#07080B"></circle>
+          </svg>
+          <div style="font-size:26px; font-weight:700; letter-spacing:-0.048em; color:#07080B;">BRANDYBEN</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#6B7183;">Verticale · centrée</div>
+        <div style="background:#0E1016; border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:24px; display:flex; flex-direction:column; align-items:center; gap:12px; min-height:104px; justify-content:center;">
+          <svg width="34" height="34" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="9" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-size:17px; font-weight:700; letter-spacing:-0.035em;">BRANDYBEN</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#6B7183;">Favicon · pastille</div>
+        <div style="background:#0E1016; border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:28px; display:flex; align-items:center; justify-content:center; gap:16px; min-height:104px;">
+          <div style="width:48px; height:48px; border-radius:11px; background:#4F7CFF; display:flex; align-items:center; justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+              <path d="M100 96A70 70 0 0 0 30 26" stroke="#07080B" stroke-width="12" stroke-linecap="round"></path>
+              <circle cx="30" cy="96" r="12" fill="#07080B"></circle>
+              <circle cx="30" cy="26" r="10" fill="#07080B"></circle>
+            </svg>
+          </div>
+          <div style="width:48px; height:48px; border-radius:11px; background:#F2F4F8; display:flex; align-items:center; justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+              <path d="M100 96A70 70 0 0 0 30 26" stroke="#07080B" stroke-width="12" stroke-linecap="round"></path>
+              <circle cx="30" cy="96" r="12" fill="#07080B"></circle>
+              <circle cx="30" cy="26" r="10" fill="#07080B"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:24px;">
+    <div style="flex:1 1 340px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">Palette</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:center; gap:14px;"><div style="width:44px; height:44px; border-radius:10px; background:#07080B; border:1px solid rgba(255,255,255,0.14);"></div><div style="display:flex; flex-direction:column;"><div style="font-size:14px; font-weight:500;">Encre</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6B7183;">#07080B · fonds</div></div></div>
+        <div style="display:flex; align-items:center; gap:14px;"><div style="width:44px; height:44px; border-radius:10px; background:#F2F4F8;"></div><div style="display:flex; flex-direction:column;"><div style="font-size:14px; font-weight:500;">Craie</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6B7183;">#F2F4F8 · marque, texte</div></div></div>
+        <div style="display:flex; align-items:center; gap:14px;"><div style="width:44px; height:44px; border-radius:10px; background:#FFB84D;"></div><div style="display:flex; flex-direction:column;"><div style="font-size:14px; font-weight:500;">Pivot</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6B7183;">#FFB84D · point haut du signe</div></div></div>
+        <div style="display:flex; align-items:center; gap:14px;"><div style="width:44px; height:44px; border-radius:10px; background:#4F7CFF;"></div><div style="display:flex; flex-direction:column;"><div style="font-size:14px; font-weight:500;">Signal</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6B7183;">#4F7CFF · interface, liens</div></div></div>
+        <div style="display:flex; align-items:center; gap:14px;"><div style="width:44px; height:44px; border-radius:10px; background:#8B93A7;"></div><div style="display:flex; flex-direction:column;"><div style="font-size:14px; font-weight:500;">Ardoise</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6B7183;">#8B93A7 · texte secondaire</div></div></div>
+      </div>
+      <div style="font-size:13.5px; line-height:1.6; color:#8B93A7; text-wrap:pretty;">L'ambre est réservé au point haut de la marque. Il ne sert jamais de couleur d'interface : c'est ce qui le rend reconnaissable.</div>
+    </div>
+
+    <div style="flex:1 1 340px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:22px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">Typographie</div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div style="font-size:38px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Instrument Sans</div>
+        <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">Titres 600–700, tracking −0.04 em. Courants 400, interligne 1,65.</div>
+      </div>
+      <div style="height:1px; background:rgba(255,255,255,0.09);"></div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:26px; font-weight:500;">JetBrains Mono</div>
+        <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">Surtitres, cotes, références de projet, chiffres techniques. Toujours en capitales espacées 0,2 em.</div>
+      </div>
+    </div>
+
+    <div style="flex:1 1 300px; border:1px solid rgba(255,255,255,0.09); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:18px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#6B7183;">À ne pas faire</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div style="background:#0B0D13; border:1px solid rgba(255,90,90,0.25); border-radius:12px; padding:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="40" height="40" viewBox="0 0 120 120" fill="none" style="transform:rotate(35deg);">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#FF6B6B; text-align:center;">Ne pas pivoter</div>
+        </div>
+        <div style="background:#0B0D13; border:1px solid rgba(255,90,90,0.25); border-radius:12px; padding:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="40" height="40" viewBox="0 0 120 120" fill="none" style="transform:scaleX(0.6);">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#FF6B6B; text-align:center;">Ne pas déformer</div>
+        </div>
+        <div style="background:#0B0D13; border:1px solid rgba(255,90,90,0.25); border-radius:12px; padding:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="40" height="40" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="3" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#FF6B6B; text-align:center;">Ne pas affiner le trait</div>
+        </div>
+        <div style="background:#0B0D13; border:1px solid rgba(255,90,90,0.25); border-radius:12px; padding:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <svg width="40" height="40" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#FF6B6B" stroke-width="10" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="10" fill="#4FD1A5"></circle>
+            <circle cx="30" cy="26" r="8" fill="#B36BFF"></circle>
+          </svg>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#FF6B6B; text-align:center;">Hors palette</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:22px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#6B7183;">Applications</div>
+    <div style="display:flex; flex-wrap:wrap; gap:20px;">
+      <div style="flex:1 1 300px; background:#0E1016; border:1px solid rgba(255,255,255,0.09); border-radius:16px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; min-height:190px;">
+        <div style="display:flex; align-items:center; gap:11px;">
+          <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle>
+            <circle cx="30" cy="26" r="10" fill="#FFB84D"></circle>
+          </svg>
+          <div style="font-size:15px; font-weight:700; letter-spacing:-0.04em;">BRANDYBEN</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:18px; font-weight:600; letter-spacing:-0.02em;">Bennett MEDEHOU</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#8B93A7;">Ingénieur civil · cofondateur</div>
+        </div>
+      </div>
+      <div style="flex:1 1 300px; background:#F2F4F8; border-radius:16px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; min-height:190px;">
+        <div style="display:flex; align-items:center; gap:11px;">
+          <svg width="26" height="26" viewBox="0 0 120 120" fill="none">
+            <path d="M100 96A70 70 0 0 0 30 26" stroke="#07080B" stroke-width="12" stroke-linecap="round"></path>
+            <circle cx="30" cy="96" r="12" fill="#07080B"></circle>
+            <circle cx="30" cy="26" r="10" fill="#07080B"></circle>
+          </svg>
+          <div style="font-size:15px; font-weight:700; letter-spacing:-0.04em; color:#07080B;">BRANDYBEN</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6B7183;">Version monochrome · impression 1 couleur</div>
+      </div>
+      <div style="flex:1 1 200px; background:radial-gradient(circle at 30% 80%,rgba(255,184,77,0.18),transparent 62%),#0B0D13; border:1px solid rgba(255,255,255,0.09); border-radius:16px; padding:30px; display:flex; align-items:center; justify-content:center; min-height:190px;">
+        <svg width="96" height="96" viewBox="0 0 120 120" fill="none">
+          <path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="10" stroke-linecap="round"></path>
+          <circle cx="30" cy="96" r="10" fill="#F2F4F8"></circle>
+          <circle cx="30" cy="26" r="8" fill="#FFB84D"></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

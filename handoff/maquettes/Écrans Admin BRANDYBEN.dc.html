@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#101216; }
+a { color:#4F7CFF; text-decoration:none; } a:hover { color:#8AA6FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Instrument Sans',sans-serif; color:#F2F4F8; background:#101216; padding:56px 48px 96px;">
+  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:44px; max-width:900px;">
+    <div style="font-family:'Instrument Sans',sans-serif; font-size:44px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Écrans — dashboard admin</div>
+    <div style="font-size:16px; line-height:1.65; color:#9AA2B4;">L'espace privé où vous gérez clients, projets, demandes de devis, avis et contenus. Routes sous <span style="font-family:monospace; color:#9CB4FF;">/admin</span>, authentification Supabase, une seule table par entité.</div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:56px;">
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A1 · Connexion</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/login</div></div>
+      <div style="width:1200px; height:620px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; position:relative; display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:800px; height:560px; background:radial-gradient(ellipse at center,rgba(79,124,255,0.22),transparent 62%); filter:blur(26px);"></div>
+        <div style="position:relative; width:400px; border:1px solid rgba(255,255,255,0.11); border-radius:22px; background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.012)); padding:36px; display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <svg width="26" height="26" viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN"><path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path><circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle><circle cx="30" cy="26" r="10" fill="#FFB84D"></circle></svg>
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+          </div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:26px; font-weight:700; letter-spacing:-0.035em;">Espace administration</div>
+          <div style="font-size:14px; line-height:1.6; color:#8B93A7;">Réservé à Brandon et Bennett. Connexion par e-mail et mot de passe.</div>
+          <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:13px; color:#9AA2B4;">E-mail</div><div style="font-size:14px; padding:12px 14px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072;">vous@brandyben.com</div></div>
+          <div style="display:flex; flex-direction:column; gap:6px;"><div style="font-size:13px; color:#9AA2B4;">Mot de passe</div><div style="font-size:14px; padding:12px 14px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072;">••••••••••</div></div>
+          <div style="background:#4F7CFF; color:#fff; font-size:14.5px; font-weight:600; padding:14px; border-radius:999px; text-align:center; box-shadow:0 12px 36px rgba(79,124,255,0.3);">Se connecter</div>
+          <div style="font-size:12.5px; color:#6B7183; text-align:center;">Lien de connexion par e-mail · Mot de passe oublié</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A2 · Tableau de bord</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin</div></div>
+      <div style="width:1400px; height:820px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px; display:flex; flex-direction:column; gap:22px;">
+          <div style="display:flex; align-items:center; gap:9px; padding:0 8px;">
+            <svg width="22" height="22" viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN"><path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path><circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle><circle cx="30" cy="26" r="10" fill="#FFB84D"></circle></svg>
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:16px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navDash }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+          <div style="margin-top:auto; border-top:1px solid rgba(255,255,255,0.08); padding-top:16px; display:flex; align-items:center; gap:10px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(79,124,255,0.2); border:1px solid rgba(79,124,255,0.4); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600;">BM</div>
+            <div><div style="font-size:13px; font-weight:600;">Brandon</div><div style="font-size:11.5px; color:#6B7183;">Administrateur</div></div>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Tableau de bord</div><div style="font-size:13px; color:#6B7183; margin-top:3px;">Mardi 2 septembre 2026</div></div>
+            <div style="display:flex; gap:10px;">
+              <div style="font-size:13px; padding:10px 16px; border:1px solid rgba(255,255,255,0.14); border-radius:999px; color:#C3C9D6;">Voir le site</div>
+              <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:999px;">Nouveau projet</div>
+            </div>
+          </div>
+          <div style="padding:24px 28px; display:flex; flex-direction:column; gap:22px;">
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+              <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+                <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:20px; display:flex; flex-direction:column; gap:8px;">
+                  <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#6B7183;">{{ k.label }}</div>
+                  <div style="font-family:'Instrument Sans',sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.04em; line-height:1;">{{ k.value }}</div>
+                  <div style="{{ k.deltaStyle }}">{{ k.delta }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:16px;">
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); overflow:hidden;">
+                <div style="padding:18px 20px; border-bottom:1px solid rgba(255,255,255,0.09); display:flex; align-items:center; justify-content:space-between;">
+                  <div style="font-size:15px; font-weight:600;">Dernières demandes de devis</div>
+                  <div style="font-size:12.5px; color:#4F7CFF;">Tout voir</div>
+                </div>
+                <sc-for list="{{ demandes }}" as="d" hint-placeholder-count="5">
+                  <div style="padding:14px 20px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:14px;">
+                    <div style="flex:1;"><div style="font-size:14px; font-weight:500;">{{ d.name }}</div><div style="font-size:12.5px; color:#6B7183; margin-top:2px;">{{ d.subject }}</div></div>
+                    <div style="{{ d.poleStyle }}">{{ d.pole }}</div>
+                    <div style="{{ d.statutStyle }}">{{ d.statut }}</div>
+                    <div style="font-size:12px; color:#5A6072; min-width:70px; text-align:right;">{{ d.date }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:16px;">
+                <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:20px; display:flex; flex-direction:column; gap:14px;">
+                  <div style="font-size:15px; font-weight:600;">À faire</div>
+                  <sc-for list="{{ todo }}" as="t" hint-placeholder-count="3">
+                    <div style="display:flex; gap:11px; align-items:flex-start;">
+                      <div style="width:16px; height:16px; border:1px solid rgba(255,255,255,0.22); border-radius:4px; margin-top:2px;"></div>
+                      <div style="font-size:13.5px; line-height:1.5; color:#C3C9D6;">{{ t.label }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="border:1px solid rgba(255,184,77,0.28); border-radius:16px; background:rgba(255,184,77,0.07); padding:20px; display:flex; flex-direction:column; gap:8px;">
+                  <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#FFB84D;">Rappel légal</div>
+                  <div style="font-size:13.5px; line-height:1.55; color:#E7D6B8;">Casier judiciaire à déposer au tribunal avant le 01-11-2026. Numéro RCCM à reporter dans les mentions légales dès délivrance.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A3 · Clients</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/clients</div></div>
+      <div style="width:1400px; height:760px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navClients }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Clients</div><div style="font-size:13px; color:#6B7183; margin-top:3px;">6 clients · 4 affichés sur le site</div></div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:13px; padding:10px 16px; border:1px solid rgba(255,255,255,0.14); border-radius:10px; color:#5A6072; width:200px;">Rechercher un client…</div>
+              <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:10px;">+ Nouveau client</div>
+            </div>
+          </div>
+          <div style="padding:20px 28px;">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:14px; overflow:hidden;">
+              <div style="display:grid; grid-template-columns:2fr 1.4fr 1fr 0.8fr 0.9fr 90px; gap:14px; padding:13px 18px; background:rgba(255,255,255,0.04); font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7183;">
+                <div>Client</div><div>Secteur</div><div>Contact</div><div>Projets</div><div>Visible</div><div></div>
+              </div>
+              <sc-for list="{{ clients }}" as="c" hint-placeholder-count="6">
+                <div style="display:grid; grid-template-columns:2fr 1.4fr 1fr 0.8fr 0.9fr 90px; gap:14px; padding:15px 18px; border-top:1px solid rgba(255,255,255,0.06); align-items:center;">
+                  <div style="display:flex; align-items:center; gap:11px;">
+                    <div style="width:32px; height:32px; border-radius:8px; border:1px dashed rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; font-size:10px; color:#5A6072;">logo</div>
+                    <div style="font-size:14px; font-weight:500;">{{ c.name }}</div>
+                  </div>
+                  <div style="font-size:13.5px; color:#9AA2B4;">{{ c.secteur }}</div>
+                  <div style="font-size:13px; color:#9AA2B4;">{{ c.contact }}</div>
+                  <div style="font-size:13.5px; font-variant-numeric:tabular-nums;">{{ c.projets }}</div>
+                  <div style="{{ c.visibleStyle }}">{{ c.visible }}</div>
+                  <div style="font-size:12.5px; color:#4F7CFF; text-align:right;">Modifier</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width:1400px; font-size:13.5px; line-height:1.6; color:#7C8398;">Table <span style="font-family:monospace; color:#9CB4FF;">clients</span> : nom, secteur, logo (Supabase Storage), site, contact, visible_sur_site. Le bandeau « Ils nous font confiance » lit les clients visibles.</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A4 · Fiche client</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/clients/[id]</div></div>
+      <div style="width:1400px; height:760px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navClients }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-size:12.5px; color:#6B7183;">Clients / Nouveau</div><div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em; margin-top:4px;">Ajouter un client</div></div>
+            <div style="display:flex; gap:10px;">
+              <div style="font-size:13px; padding:10px 16px; border:1px solid rgba(255,255,255,0.14); border-radius:10px; color:#C3C9D6;">Annuler</div>
+              <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:10px;">Enregistrer</div>
+            </div>
+          </div>
+          <div style="padding:24px 28px; display:grid; grid-template-columns:1.6fr 1fr; gap:20px; align-items:start;">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:24px; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <sc-for list="{{ champsClient }}" as="f" hint-placeholder-count="6">
+                <div style="{{ f.wrap }}">
+                  <div style="font-size:13px; color:#9AA2B4; margin-bottom:6px;">{{ f.label }}</div>
+                  <div style="{{ f.box }}">{{ f.ph }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:22px; display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:14.5px; font-weight:600;">Logo du client</div>
+                <div style="border:1px dashed rgba(255,255,255,0.18); border-radius:12px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:#5A6072; font-size:13px;">Glissez un fichier<div style="font-size:11.5px;">PNG ou SVG · fond transparent</div></div>
+              </div>
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:22px; display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:14.5px; font-weight:600;">Affichage</div>
+                <div style="display:flex; align-items:center; justify-content:space-between;"><div style="font-size:13.5px; color:#C3C9D6;">Visible sur le site</div><div style="width:38px; height:22px; border-radius:999px; background:#4F7CFF; position:relative;"><div style="position:absolute; top:3px; right:3px; width:16px; height:16px; border-radius:50%; background:#fff;"></div></div></div>
+                <div style="display:flex; align-items:center; justify-content:space-between;"><div style="font-size:13.5px; color:#C3C9D6;">Autorisé à citer le nom</div><div style="width:38px; height:22px; border-radius:999px; background:rgba(255,255,255,0.12); position:relative;"><div style="position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:#8B93A7;"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A5 · Réalisations</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/projets</div></div>
+      <div style="width:1400px; height:760px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navProjets }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Réalisations</div><div style="font-size:13px; color:#6B7183; margin-top:3px;">5 projets · 3 publiés · 2 brouillons</div></div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <sc-for list="{{ filtresAdmin }}" as="f" hint-placeholder-count="3"><div style="{{ f.style }}">{{ f.label }}</div></sc-for>
+              <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:10px; margin-left:6px;">+ Nouveau projet</div>
+            </div>
+          </div>
+          <div style="padding:22px 28px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+            <sc-for list="{{ projetsAdmin }}" as="p" hint-placeholder-count="4">
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; overflow:hidden; background:rgba(255,255,255,0.028);">
+                <div style="height:120px; background:#0B0D13; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:12px;">Image</div>
+                <div style="padding:16px; display:flex; flex-direction:column; gap:9px;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;"><div style="{{ p.tagStyle }}">{{ p.tag }}</div><div style="{{ p.statutStyle }}">{{ p.statut }}</div></div>
+                  <div style="font-size:14.5px; font-weight:600;">{{ p.title }}</div>
+                  <div style="font-size:12.5px; color:#6B7183;">{{ p.client }}</div>
+                  <div style="display:flex; gap:8px; margin-top:4px;"><div style="font-size:12.5px; color:#4F7CFF;">Modifier</div><div style="font-size:12.5px; color:#6B7183;">Aperçu</div></div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="width:1400px; font-size:13.5px; line-height:1.6; color:#7C8398;">Même gabarit pour <span style="font-family:monospace; color:#9CB4FF;">/admin/articles</span> (blog) et <span style="font-family:monospace; color:#9CB4FF;">/admin/temoignages</span> : liste, statut publié/brouillon, éditeur.</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A6 · Demandes de devis</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/demandes</div></div>
+      <div style="width:1400px; height:760px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navDemandes }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+        </div>
+        <div style="flex:1; display:flex;">
+          <div style="width:420px; border-right:1px solid rgba(255,255,255,0.09); display:flex; flex-direction:column;">
+            <div style="padding:18px 20px; border-bottom:1px solid rgba(255,255,255,0.09);">
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.035em;">Demandes</div>
+              <div style="display:flex; gap:8px; margin-top:12px;">
+                <sc-for list="{{ filtresDemandes }}" as="f" hint-placeholder-count="3"><div style="{{ f.style }}">{{ f.label }}</div></sc-for>
+              </div>
+            </div>
+            <sc-for list="{{ demandes }}" as="d" hint-placeholder-count="5">
+              <div style="{{ d.rowStyle }}">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                  <div style="font-size:14px; font-weight:600;">{{ d.name }}</div>
+                  <div style="font-size:11.5px; color:#5A6072;">{{ d.date }}</div>
+                </div>
+                <div style="font-size:13px; color:#8B93A7; margin-top:5px;">{{ d.subject }}</div>
+                <div style="display:flex; gap:7px; margin-top:9px;"><div style="{{ d.poleStyle }}">{{ d.pole }}</div><div style="{{ d.statutStyle }}">{{ d.statut }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="flex:1; padding:24px 28px; display:flex; flex-direction:column; gap:20px;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+              <div>
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Société Exemple SARL</div>
+                <div style="font-size:13.5px; color:#8B93A7; margin-top:6px;">contact@exemple.bj · +229 00 00 00 00 · reçue le 31 août 2026</div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <div style="font-size:13px; padding:9px 15px; border:1px solid rgba(255,255,255,0.14); border-radius:10px; color:#C3C9D6;">Archiver</div>
+                <div style="font-size:13px; font-weight:600; padding:9px 16px; background:#4F7CFF; border-radius:10px;">Répondre</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <div style="font-size:12px; padding:7px 13px; border-radius:999px; background:rgba(79,124,255,0.16); border:1px solid rgba(79,124,255,0.4); color:#9CB4FF;">Développement web</div>
+              <div style="font-size:12px; padding:7px 13px; border-radius:999px; background:rgba(255,184,77,0.14); border:1px solid rgba(255,184,77,0.35); color:#FFCF8A;">Nouveau</div>
+            </div>
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:22px; font-size:14.5px; line-height:1.7; color:#C3C9D6;">Bonjour, nous souhaitons un site vitrine de cinq pages avec un formulaire de contact et une page catalogue. Notre budget indicatif est de … et nous aimerions une mise en ligne avant la fin du trimestre.</div>
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:22px; display:flex flex-direction:column; gap:14px;">
+              <div style="font-size:14.5px; font-weight:600; margin-bottom:12px;">Suivi interne</div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <sc-for list="{{ statuts }}" as="s" hint-placeholder-count="4"><div style="{{ s.style }}">{{ s.label }}</div></sc-for>
+              </div>
+              <div style="font-size:13px; padding:12px 14px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072; margin-top:14px;">Note interne (visible seulement par vous deux)…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">A7 · Paramètres</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/parametres</div></div>
+      <div style="width:1400px; height:700px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <sc-for list="{{ navParams }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Paramètres</div>
+            <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:10px;">Enregistrer</div>
+          </div>
+          <div style="padding:24px 28px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start;">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:24px; display:flex; flex-direction:column; gap:16px;">
+              <div style="font-size:14.5px; font-weight:600;">Informations légales</div>
+              <sc-for list="{{ champsLegal }}" as="f" hint-placeholder-count="5">
+                <div><div style="font-size:13px; color:#9AA2B4; margin-bottom:6px;">{{ f.label }}</div><div style="{{ f.box }}">{{ f.ph }}</div></div>
+              </sc-for>
+              <div style="font-size:12.5px; line-height:1.55; color:#FFCF8A;">Le numéro RCCM saisi ici alimente automatiquement la page Mentions légales.</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:24px; display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:14.5px; font-weight:600;">Utilisateurs</div>
+                <sc-for list="{{ users }}" as="u" hint-placeholder-count="2">
+                  <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width:34px; height:34px; border-radius:50%; background:rgba(79,124,255,0.2); border:1px solid rgba(79,124,255,0.4); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600;">{{ u.initials }}</div>
+                    <div style="flex:1;"><div style="font-size:14px; font-weight:500;">{{ u.name }}</div><div style="font-size:12px; color:#6B7183;">{{ u.email }}</div></div>
+                    <div style="font-size:12px; padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,0.14); color:#C3C9D6;">{{ u.role }}</div>
+                  </div>
+                </sc-for>
+                <div style="font-size:13px; color:#4F7CFF;">+ Inviter un utilisateur</div>
+              </div>
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:24px; display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:14.5px; font-weight:600;">Coordonnées affichées sur le site</div>
+                <sc-for list="{{ champsContact }}" as="f" hint-placeholder-count="3">
+                  <div><div style="font-size:13px; color:#9AA2B4; margin-bottom:6px;">{{ f.label }}</div><div style="{{ f.box }}">{{ f.ph }}</div></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px; width:1400px;">
+      <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">Notes pour l'implémentation Next.js + Supabase</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:26px; display:flex; flex-direction:column; gap:14px;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#6B7183;">Tables Supabase</div>
+          <sc-for list="{{ tables }}" as="t" hint-placeholder-count="7">
+            <div style="display:flex; gap:14px; align-items:baseline; border-top:1px solid rgba(255,255,255,0.07); padding-top:12px;">
+              <div style="font-family:monospace; font-size:13.5px; color:#9CB4FF; min-width:150px;">{{ t.name }}</div>
+              <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">{{ t.cols }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.10); border-radius:16px; background:rgba(255,255,255,0.028); padding:26px; display:flex; flex-direction:column; gap:14px;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#6B7183;">Points d'attention</div>
+          <sc-for list="{{ notes }}" as="n" hint-placeholder-count="6">
+            <div style="display:flex; gap:12px; align-items:baseline; border-top:1px solid rgba(255,255,255,0.07); padding-top:12px;">
+              <div style="font-size:12px; color:#4F7CFF; font-variant-numeric:tabular-nums;">{{ n.num }}</div>
+              <div style="font-size:13.5px; line-height:1.65; color:#C3C9D6;">{{ n.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  nav(active) {
+    const items = [
+      ['dash', 'Tableau de bord'], ['clients', 'Clients'], ['projets', 'Réalisations'],
+      ['demandes', 'Demandes de devis'], ['avis', 'Témoignages'], ['articles', 'Articles'],
+      ['medias', 'Médias'], ['params', 'Paramètres'],
+    ];
+    return items.map(([k, label]) => ({
+      label,
+      style: 'font-size:13.5px; padding:10px 12px; border-radius:9px; color:' + (k === active ? '#F2F4F8' : '#8B93A7') +
+        '; background:' + (k === active ? 'rgba(79,124,255,0.16)' : 'transparent') +
+        (k === active ? '; box-shadow:inset 0 0 0 1px rgba(79,124,255,0.35)' : '') + ';',
+    }));
+  }
+
+  renderVals() {
+    const box = 'font-size:14px; padding:11px 13px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072;';
+    const pill = (c, bg, bd) => 'font-size:11.5px; padding:5px 11px; border-radius:999px; color:' + c + '; background:' + bg + '; border:1px solid ' + bd + '; white-space:nowrap;';
+    const bluePill = pill('#9CB4FF', 'rgba(79,124,255,0.14)', 'rgba(79,124,255,0.32)');
+    const amberPill = pill('#FFCF8A', 'rgba(255,184,77,0.12)', 'rgba(255,184,77,0.3)');
+    const greenPill = pill('#8FE3C0', 'rgba(0,180,120,0.12)', 'rgba(0,180,120,0.3)');
+    const greyPill = pill('#9AA2B4', 'rgba(255,255,255,0.05)', 'rgba(255,255,255,0.12)');
+    const d = (name, subject, pole, statut, date, sel) => ({
+      name, subject, date,
+      pole, poleStyle: pole === 'Bâtiment' ? amberPill : bluePill,
+      statut, statutStyle: statut === 'Nouveau' ? amberPill : (statut === 'Devis envoyé' ? greenPill : greyPill),
+      rowStyle: 'padding:16px 20px; border-bottom:1px solid rgba(255,255,255,0.06);' + (sel ? ' background:rgba(79,124,255,0.09); box-shadow:inset 3px 0 0 #4F7CFF;' : ''),
+    });
+    return {
+      navDash: this.nav('dash'), navClients: this.nav('clients'), navProjets: this.nav('projets'),
+      navDemandes: this.nav('demandes'), navParams: this.nav('params'),
+      kpis: [
+        { label: 'Demandes ce mois', value: '12', delta: '+4 vs août', deltaStyle: 'font-size:12.5px; color:#8FE3C0;' },
+        { label: 'Devis en attente', value: '3', delta: 'à relancer', deltaStyle: 'font-size:12.5px; color:#FFCF8A;' },
+        { label: 'Projets publiés', value: '5', delta: '2 brouillons', deltaStyle: 'font-size:12.5px; color:#6B7183;' },
+        { label: 'Clients actifs', value: '6', delta: '4 visibles sur le site', deltaStyle: 'font-size:12.5px; color:#6B7183;' },
+      ],
+      demandes: [
+        d('Société Exemple SARL', 'Site vitrine 5 pages + catalogue', 'Développement web', 'Nouveau', '31 août', true),
+        d('Association Horizon', 'Refonte du site et hébergement', 'Développement web', 'En cours', '28 août'),
+        d('Cabinet Agbo', 'Plans d\'exécution villa duplex', 'Bâtiment', 'Devis envoyé', '24 août'),
+        d('Boutique Fifa', 'Boutique en ligne, paiement mobile', 'Développement web', 'Devis envoyé', '21 août'),
+        d('EPI Construction', 'Métrés et note technique', 'Bâtiment', 'Archivé', '15 août'),
+      ],
+      todo: [
+        { label: 'Ajouter les captures du projet Boutique Fifa' },
+        { label: 'Demander un témoignage à Association Horizon' },
+        { label: 'Publier le premier article du blog' },
+      ],
+      clients: [
+        ['Société Exemple SARL', 'Commerce', 'contact@exemple.bj', '2', 'Oui'],
+        ['Association Horizon', 'Association', 'horizon@mail.bj', '1', 'Oui'],
+        ['Cabinet Agbo', 'Architecture', 'agbo@mail.bj', '1', 'Oui'],
+        ['Boutique Fifa', 'Commerce', 'fifa@mail.bj', '1', 'Oui'],
+        ['EPI Construction', 'BTP', 'epi@mail.bj', '2', 'Non'],
+        ['Client privé', 'Particulier', '—', '1', 'Non'],
+      ].map(([name, secteur, contact, projets, visible]) => ({
+        name, secteur, contact, projets, visible,
+        visibleStyle: visible === 'Oui' ? greenPill : greyPill,
+      })),
+      champsClient: [
+        { label: 'Nom du client', ph: 'Société Exemple SARL', box: box, wrap: 'grid-column:span 2;' },
+        { label: 'Secteur', ph: 'Commerce', box: box, wrap: '' },
+        { label: 'Ville', ph: 'Cotonou', box: box, wrap: '' },
+        { label: 'Personne de contact', ph: 'Nom et fonction', box: box, wrap: '' },
+        { label: 'E-mail', ph: 'contact@exemple.bj', box: box, wrap: '' },
+        { label: 'Site internet', ph: 'https://', box: box, wrap: '' },
+        { label: 'Téléphone', ph: '+229 ...', box: box, wrap: '' },
+        { label: 'Notes internes', ph: 'Historique de la relation, préférences…', box: box + ' height:80px;', wrap: 'grid-column:span 2;' },
+      ],
+      filtresAdmin: ['Tous', 'Publiés', 'Brouillons'].map((label, i) => ({
+        label,
+        style: 'font-size:12.5px; padding:9px 14px; border-radius:9px; border:1px solid ' + (i === 0 ? 'rgba(79,124,255,0.5)' : 'rgba(255,255,255,0.13)') + '; color:' + (i === 0 ? '#fff' : '#9AA2B4') + '; background:' + (i === 0 ? 'rgba(79,124,255,0.14)' : 'transparent') + ';',
+      })),
+      filtresDemandes: ['Nouvelles', 'En cours', 'Archivées'].map((label, i) => ({
+        label,
+        style: 'font-size:12.5px; padding:8px 13px; border-radius:999px; border:1px solid ' + (i === 0 ? 'rgba(79,124,255,0.5)' : 'rgba(255,255,255,0.13)') + '; color:' + (i === 0 ? '#fff' : '#9AA2B4') + '; background:' + (i === 0 ? 'rgba(79,124,255,0.14)' : 'transparent') + ';',
+      })),
+      projetsAdmin: [
+        ['Site Société Exemple', 'Société Exemple SARL', 'Site vitrine', 'Publié'],
+        ['Boutique Fifa', 'Boutique Fifa', 'E-commerce', 'Publié'],
+        ['Villa duplex Akpakpa', 'Cabinet Agbo', 'Bâtiment', 'Brouillon'],
+        ['Outil de gestion Horizon', 'Association Horizon', 'Logiciel', 'Publié'],
+      ].map(([title, client, tag, statut]) => ({
+        title, client, tag, statut,
+        tagStyle: 'font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:' + (tag === 'Bâtiment' ? '#FFB84D' : '#4F7CFF') + ';',
+        statutStyle: statut === 'Publié' ? greenPill : greyPill,
+      })),
+      statuts: ['Nouveau', 'En cours', 'Devis envoyé', 'Gagné', 'Perdu'].map((label, i) => ({
+        label,
+        style: 'font-size:12.5px; padding:9px 14px; border-radius:999px; border:1px solid ' + (i === 1 ? '#4F7CFF' : 'rgba(255,255,255,0.13)') + '; color:' + (i === 1 ? '#fff' : '#9AA2B4') + '; background:' + (i === 1 ? 'rgba(79,124,255,0.18)' : 'transparent') + ';',
+      })),
+      champsLegal: [
+        { label: 'Numéro RCCM', ph: 'À compléter dès délivrance', box: box },
+        { label: 'Numéro IFU', ph: '0202212868410', box: box },
+        { label: 'Raison sociale', ph: 'BRANDYBEN', box: box },
+        { label: 'Siège social', ph: 'Quartier Agontinkon, Îlot 1270, Parcelle D, Cotonou', box: box },
+        { label: 'Hébergeur', ph: 'Nom, adresse et contact', box: box },
+      ],
+      champsContact: [
+        { label: 'Téléphone', ph: '+229 01 53 72 90 10', box: box },
+        { label: 'E-mail', ph: 'brandonmedehou2203@gmail.com', box: box },
+        { label: 'Horaires', ph: 'Lundi – samedi, 8 h – 18 h', box: box },
+      ],
+      users: [
+        { initials: 'BM', name: 'Brandon MEDEHOU', email: 'brandon@brandyben.com', role: 'Admin' },
+        { initials: 'BM', name: 'Bennett MEDEHOU', email: 'bennett@brandyben.com', role: 'Admin' },
+      ],
+      tables: [
+        { name: 'clients', cols: 'nom, secteur, ville, contact, email, site, logo_url, visible_sur_site' },
+        { name: 'projects', cols: 'titre, slug, client_id, pole, resume, contenu, images[], lien, statut' },
+        { name: 'quote_requests', cols: 'nom, email, telephone, pole, message, statut, note_interne, created_at' },
+        { name: 'testimonials', cols: 'client_id, auteur, fonction, note, citation, statut' },
+        { name: 'posts', cols: 'titre, slug, extrait, contenu, couverture, statut, published_at' },
+        { name: 'services', cols: 'pole, titre, description, benefice, ordre' },
+        { name: 'settings', cols: 'rccm, ifu, adresse, telephone, email, horaires, hebergeur, reseaux' },
+      ],
+      notes: [
+        { num: '01', text: 'Site public en Server Components avec revalidation : lecture directe des tables publiées, aucune donnée sensible côté client.' },
+        { num: '02', text: 'RLS activée partout : lecture publique limitée aux lignes statut = publié ; écriture réservée aux comptes authentifiés.' },
+        { num: '03', text: 'Supabase Auth par e-mail et mot de passe pour deux comptes admin, middleware Next.js sur /admin.' },
+        { num: '04', text: 'Images et logos dans Supabase Storage (buckets publics logos / projects) servis via next/image.' },
+        { num: '05', text: 'Formulaire de contact en Server Action : insertion dans quote_requests + notification e-mail, plus un anti-spam simple.' },
+        { num: '06', text: 'Un seul jeu de tokens de style (couleurs, typographies, rayons) partagé entre le site et le dashboard.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

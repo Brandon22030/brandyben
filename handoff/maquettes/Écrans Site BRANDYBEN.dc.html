@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#101216; }
+a { color:#4F7CFF; text-decoration:none; } a:hover { color:#8AA6FF; }
+@keyframes bb-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="font-family:'Instrument Sans',sans-serif; color:#F2F4F8; background:#101216; padding:56px 48px 96px;">
+  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:44px; max-width:900px;">
+    <div style="font-family:'Instrument Sans',sans-serif; font-size:44px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Écrans — site public</div>
+    <div style="font-size:16px; line-height:1.65; color:#9AA2B4;">Huit écrans complets, un par page, à 1200 px de large. Chaque cadre correspond à une route Next.js (App Router). Le dashboard admin est dans le fichier « Écrans Admin BRANDYBEN ».</div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start;">
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">01 · Accueil</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B;">
+
+        <div style="position:relative;">
+          <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(ellipse 80% 60% at 50% 15%,#000,transparent);"></div>
+          <div style="position:absolute; top:-260px; left:50%; transform:translateX(-50%); width:900px; height:620px; background:radial-gradient(ellipse at center,rgba(79,124,255,0.26),transparent 60%); filter:blur(26px);"></div>
+          <div style="position:relative; padding:18px 28px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; border:1px solid rgba(255,255,255,0.09); border-radius:999px; background:rgba(14,16,22,0.72); padding:8px 8px 8px 18px;">
+              <div style="display:flex; align-items:center; gap:9px;">
+                <svg width="22" height="22" viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN"><path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path><circle cx="30" cy="96" r="12" fill="#F2F4F8"></circle><circle cx="30" cy="26" r="10" fill="#FFB84D"></circle></svg>
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:17px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+              </div>
+              <div style="display:flex; align-items:center; gap:4px;">
+                <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+                <div style="background:#F2F4F8; color:#07080B; font-size:12.5px; font-weight:600; padding:9px 16px; border-radius:999px; margin-left:6px;">Demander un devis</div>
+              </div>
+            </div>
+          </div>
+          <div style="position:relative; padding:44px 28px 0; display:flex; flex-direction:column; align-items:center; text-align:center; gap:22px;">
+            <div style="display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(255,255,255,0.12); border-radius:999px; padding:7px 15px; background:rgba(255,255,255,0.035); font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#A8B0C2;"><span style="width:6px; height:6px; border-radius:50%; background:#4F7CFF;"></span>Studio technique · Cotonou, Bénin</div>
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:84px; font-weight:700; letter-spacing:-0.055em; line-height:0.94;">Concevoir, coder,<br><span style="background:linear-gradient(100deg,#4F7CFF,#9CB4FF 40%,#FFB84D); -webkit-background-clip:text; background-clip:text; color:transparent;">construire.</span></div>
+            <div style="font-size:18px; line-height:1.6; color:#9AA2B4; max-width:60ch;">BRANDYBEN est le studio de deux frères jumeaux. Sites, logiciels et applications sur mesure, plans et études techniques du bâtiment.</div>
+            <div style="display:flex; gap:12px;">
+              <div style="background:#4F7CFF; color:#fff; font-size:15px; font-weight:600; padding:14px 28px; border-radius:999px; box-shadow:0 12px 40px rgba(79,124,255,0.35);">Démarrer un projet</div>
+              <div style="border:1px solid rgba(255,255,255,0.16); font-size:15px; font-weight:600; padding:14px 28px; border-radius:999px;">Voir nos réalisations</div>
+            </div>
+            <div style="width:100%; max-width:1000px; margin-top:14px; border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:linear-gradient(180deg,rgba(255,255,255,0.055),rgba(255,255,255,0.012)); padding:12px;">
+              <div style="border:1px solid rgba(255,255,255,0.07); border-radius:11px; background:#0B0D13; height:230px; display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:13.5px;">Capture d'un projet réalisé</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:44px 28px 0;">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:16px; overflow:hidden;">
+            <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+              <div style="background:#0A0C11; padding:26px; display:flex; flex-direction:column; gap:7px;">
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.04em; line-height:1;">{{ s.value }}</div>
+                <div style="font-size:13px; color:#8B93A7; line-height:1.45;">{{ s.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="margin-top:44px; padding:0 28px 14px; font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Ils nous font confiance</div>
+        <div style="overflow:hidden; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); padding:24px 0; mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);">
+          <div style="display:flex; gap:52px; width:max-content; animation:bb-marquee 32s linear infinite;">
+            <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="12"><div style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.03em; color:#3E4453; white-space:nowrap;">{{ m.label }}</div></sc-for>
+          </div>
+        </div>
+
+        <div style="padding:56px 28px 0;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:end;">
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:48px; font-weight:700; letter-spacing:-0.045em; line-height:1.02;">Deux pôles,<br>une seule équipe</div>
+            <div style="font-size:16px; line-height:1.7; color:#9AA2B4;">Le nom réunit Brandon et Bennett. L'entreprise réunit leurs deux métiers : le développement informatique et l'ingénierie du bâtiment. Un seul interlocuteur, deux compétences complémentaires.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:30px;">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:20px; background:linear-gradient(160deg,rgba(79,124,255,0.13),rgba(255,255,255,0.02) 55%); padding:34px; display:flex; flex-direction:column; gap:14px;">
+              <div style="display:flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#4F7CFF;"><span style="width:5px; height:5px; border-radius:50%; background:#4F7CFF;"></span>Pôle 01</div>
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:28px; font-weight:700; letter-spacing:-0.035em; line-height:1.1;">Développement web &amp; informatique</div>
+              <div style="font-size:15px; line-height:1.65; color:#9AA2B4;">Sites vitrine et boutiques en ligne, logiciels métier, applications, refonte, maintenance et conseil digital.</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;">
+                <sc-for list="{{ tags1 }}" as="t" hint-placeholder-count="4"><div style="border:1px solid rgba(255,255,255,0.13); border-radius:999px; padding:6px 13px; font-size:12.5px; color:#C3C9D6;">{{ t.label }}</div></sc-for>
+              </div>
+            </div>
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:20px; background:linear-gradient(160deg,rgba(255,184,77,0.12),rgba(255,255,255,0.02) 55%); padding:34px; display:flex; flex-direction:column; gap:14px;">
+              <div style="display:flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#FFB84D;"><span style="width:5px; height:5px; border-radius:50%; background:#FFB84D;"></span>Pôle 02</div>
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:28px; font-weight:700; letter-spacing:-0.035em; line-height:1.1;">Architecture, ingénierie &amp; technique</div>
+              <div style="font-size:15px; line-height:1.65; color:#9AA2B4;">Dessin de projet bâtiment, plans d'exécution, études de génie civil et assistance au suivi de chantier.</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;">
+                <sc-for list="{{ tags2 }}" as="t" hint-placeholder-count="4"><div style="border:1px solid rgba(255,255,255,0.13); border-radius:999px; padding:6px 13px; font-size:12.5px; color:#C3C9D6;">{{ t.label }}</div></sc-for>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:18px; overflow:hidden; margin-top:18px;">
+            <sc-for list="{{ atouts }}" as="a" hint-placeholder-count="4">
+              <div style="background:#0A0C11; padding:28px 24px; display:flex; flex-direction:column; gap:10px;">
+                <div style="font-size:12px; color:#4F7CFF; font-variant-numeric:tabular-nums;">{{ a.num }}</div>
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:18px; font-weight:700; letter-spacing:-0.025em;">{{ a.title }}</div>
+                <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">{{ a.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:56px 28px 0;">
+          <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Méthode</div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:40px; font-weight:700; letter-spacing:-0.045em; line-height:1.05; margin-top:12px;">Comment se déroule un projet</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:28px;">
+            <sc-for list="{{ etapes }}" as="e" hint-placeholder-count="4">
+              <div style="border-top:1px solid rgba(255,255,255,0.14); padding-top:20px; display:flex; flex-direction:column; gap:9px;">
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:32px; font-weight:700; letter-spacing:-0.05em; color:#252B39;">{{ e.num }}</div>
+                <div style="font-size:16px; font-weight:600;">{{ e.title }}</div>
+                <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">{{ e.desc }}</div>
+                <div style="font-size:12.5px; color:#4F7CFF;">{{ e.duree }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:56px 28px 0;">
+          <div style="position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.11); border-radius:22px; background:linear-gradient(140deg,rgba(79,124,255,0.16),rgba(255,184,77,0.07) 70%,rgba(255,255,255,0.02)); padding:48px; display:flex; align-items:center; justify-content:space-between; gap:32px;">
+            <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:44px 44px;"></div>
+            <div style="position:relative;">
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:38px; font-weight:700; letter-spacing:-0.045em; line-height:1.04;">Un projet en tête ?<br>Le premier échange est gratuit.</div>
+              <div style="font-size:15px; color:#B4BCCC; margin-top:12px;">+229 01 53 72 90 10 · brandonmedehou2203@gmail.com</div>
+            </div>
+            <div style="position:relative; background:#F2F4F8; color:#07080B; font-size:15px; font-weight:600; padding:15px 30px; border-radius:999px; white-space:nowrap;">Nous écrire</div>
+          </div>
+        </div>
+
+        <div style="margin-top:56px; border-top:1px solid rgba(255,255,255,0.09); padding:44px 28px 26px; position:relative; overflow:hidden;">
+          <div style="position:absolute; bottom:-40px; left:50%; transform:translateX(-50%); width:900px; height:340px; background:radial-gradient(ellipse at center bottom,rgba(79,124,255,0.14),transparent 65%); filter:blur(28px);"></div>
+          <div style="position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:17px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+              <div style="font-size:13.5px; line-height:1.7; color:#8B93A7;">Développement web, informatique et ingénierie technique. Cotonou, Bénin.</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#5A6072;">Navigation</div>
+              <sc-for list="{{ navFooter }}" as="n" hint-placeholder-count="7"><div style="font-size:13.5px; color:#8B93A7;">{{ n.label }}</div></sc-for>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#5A6072;">Contact</div>
+              <div style="font-size:13.5px; line-height:1.85; color:#8B93A7;">+229 01 53 72 90 10<br>brandonmedehou2203@gmail.com<br>Agontinkon, 8ᵉ arr., Cotonou</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#5A6072;">Informations</div>
+              <div style="font-size:13.5px; color:#8B93A7;">Mentions légales</div>
+              <div style="font-size:13.5px; color:#8B93A7;">IFU 0202212868410</div>
+              <div style="font-size:13.5px; color:#8B93A7;">RCCM en cours d'attribution</div>
+            </div>
+          </div>
+          <div style="position:relative; font-family:'Instrument Sans',sans-serif; font-size:150px; font-weight:700; letter-spacing:-0.06em; line-height:0.8; color:rgba(255,255,255,0.045); margin-top:36px;">BRANDYBEN</div>
+          <div style="position:relative; border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; margin-top:26px; font-size:12.5px; color:#5A6072;">© 2026 BRANDYBEN. Tous droits réservés.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">02 · À propos</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/a-propos</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 80px 56px;">
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">À propos</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:60px; font-weight:700; letter-spacing:-0.05em; line-height:0.98; margin-top:14px;">Jumeaux de naissance,<br>associés de métier.</div>
+        <div style="font-size:17px; line-height:1.7; color:#9AA2B4; max-width:66ch; margin-top:18px;">BRANDYBEN a été fondée à Cotonou par Brandon et Bennett MEDEHOU, frères jumeaux et cofondateurs. Le nom vient de la contraction de leurs deux prénoms. L'entreprise est établie au quartier Agontinkon, dans le 8ᵉ arrondissement, et est en cours d'immatriculation au RCCM via l'APIEX.</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:36px;">
+          <sc-for list="{{ equipe }}" as="m" hint-placeholder-count="2">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.03); padding:26px; display:flex; flex-direction:column; gap:14px;">
+              <div style="height:150px; border:1px dashed rgba(255,255,255,0.16); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:13px;">Portrait</div>
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.03em;">{{ m.name }}</div>
+              <div style="{{ m.roleStyle }}">{{ m.role }}</div>
+              <div style="font-size:14.5px; line-height:1.6; color:#8B93A7;">{{ m.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:32px; font-weight:700; letter-spacing:-0.035em; margin-top:48px;">Mission et valeurs</div>
+        <div style="font-size:16px; line-height:1.75; color:#B4BCCC; margin-top:14px; max-width:80ch;">Rendre accessible aux entreprises, associations et indépendants du Bénin et de la sous-région un travail technique de qualité : des outils numériques réellement utiles et des études techniques rigoureuses. Nous privilégions le travail bien fait, la clarté des échanges et le respect des délais annoncés.</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:16px; overflow:hidden; margin-top:22px;">
+          <sc-for list="{{ valeurs }}" as="v" hint-placeholder-count="3">
+            <div style="background:#0A0C11; padding:26px; display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:16px; font-weight:600;">{{ v.title }}</div>
+              <div style="font-size:14px; line-height:1.6; color:#8B93A7;">{{ v.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.03); padding:30px; margin-top:22px;">
+          <div style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:#5A6072;">Éléments de confiance</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:18px;">
+            <div><div style="font-size:12.5px; color:#6B7183; margin-bottom:5px;">Forme juridique</div><div style="font-size:15px; font-weight:600;">Entreprise individuelle</div></div>
+            <div><div style="font-size:12.5px; color:#6B7183; margin-bottom:5px;">Numéro IFU</div><div style="font-size:15px; font-weight:600; font-variant-numeric:tabular-nums;">0202212868410</div></div>
+            <div><div style="font-size:12.5px; color:#6B7183; margin-bottom:5px;">Numéro RCCM</div><div style="font-size:15px; font-weight:600;">En cours d'attribution</div></div>
+            <div><div style="font-size:12.5px; color:#6B7183; margin-bottom:5px;">Zone d'intervention</div><div style="font-size:15px; font-weight:600;">Cotonou et à distance</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">03 · Services</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/services</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 60px 56px;">
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Services</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:56px; font-weight:700; letter-spacing:-0.05em; line-height:1; margin-top:12px;">Nos prestations</div>
+        <div style="font-size:16px; line-height:1.7; color:#9AA2B4; margin-top:14px; max-width:70ch;">Chaque prestation fait l'objet d'un devis détaillé et gratuit, établi après un premier échange sur votre besoin.</div>
+        <div style="display:flex; align-items:baseline; gap:14px; border-bottom:1px solid rgba(255,255,255,0.10); padding-bottom:16px; margin-top:36px;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#4F7CFF;">Pôle 01</div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:27px; font-weight:700; letter-spacing:-0.035em;">Développement web &amp; informatique</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;">
+          <sc-for list="{{ pole1 }}" as="s" hint-placeholder-count="3">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:26px; display:flex; flex-direction:column; gap:13px;">
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.03em;">{{ s.title }}</div>
+              <div style="font-size:14.5px; line-height:1.6; color:#8B93A7;">{{ s.desc }}</div>
+              <div style="font-size:13.5px; color:#9CB4FF; border-top:1px solid rgba(255,255,255,0.09); padding-top:13px; margin-top:auto;">{{ s.benefit }}</div>
+              <div style="font-size:13.5px; font-weight:600; border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:11px; text-align:center;">Demander un devis</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:14px; border-bottom:1px solid rgba(255,255,255,0.10); padding-bottom:16px; margin-top:40px;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#FFB84D;">Pôle 02</div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:27px; font-weight:700; letter-spacing:-0.035em;">Architecture, ingénierie &amp; activités techniques</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;">
+          <sc-for list="{{ pole2 }}" as="s" hint-placeholder-count="2">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:26px; display:flex; flex-direction:column; gap:13px;">
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.03em;">{{ s.title }}</div>
+              <div style="font-size:14.5px; line-height:1.6; color:#8B93A7;">{{ s.desc }}</div>
+              <div style="font-size:13.5px; color:#FFCF8A; border-top:1px solid rgba(255,255,255,0.09); padding-top:13px; margin-top:auto;">{{ s.benefit }}</div>
+              <div style="font-size:13.5px; font-weight:600; border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:11px; text-align:center;">Demander un devis</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">04 · Réalisations</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/realisations</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 60px 56px;">
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Réalisations</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:56px; font-weight:700; letter-spacing:-0.05em; line-height:1; margin-top:12px;">Nos projets</div>
+        <div style="font-size:16px; line-height:1.7; color:#9AA2B4; margin-top:14px; max-width:70ch;">Chaque fiche présente le besoin du client, la réponse apportée et le résultat. Le filtre par pôle lit la table des projets.</div>
+        <div style="display:flex; gap:8px; margin-top:26px;">
+          <sc-for list="{{ filtres }}" as="f" hint-placeholder-count="4"><div style="{{ f.style }}">{{ f.label }}</div></sc-for>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px;">
+          <sc-for list="{{ projets }}" as="p" hint-placeholder-count="6">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; overflow:hidden; background:rgba(255,255,255,0.028);">
+              <div style="height:150px; background:radial-gradient(ellipse at 50% 0%,rgba(79,124,255,0.10),transparent 70%),#0B0D13; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:12.5px;">{{ p.image }}</div>
+              <div style="padding:20px; display:flex; flex-direction:column; gap:9px;">
+                <div style="{{ p.tagStyle }}">{{ p.tag }}</div>
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:18px; font-weight:700; letter-spacing:-0.03em;">{{ p.title }}</div>
+                <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">{{ p.desc }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.11); border-radius:20px; background:linear-gradient(140deg,rgba(79,124,255,0.14),rgba(255,255,255,0.02)); padding:36px; display:flex; align-items:center; justify-content:space-between; gap:28px; margin-top:26px;">
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:700; letter-spacing:-0.04em;">Votre projet est le prochain.</div>
+          <div style="background:#F2F4F8; color:#07080B; font-size:14.5px; font-weight:600; padding:14px 28px; border-radius:999px; white-space:nowrap;">Demander un devis</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">05 · Témoignages</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/temoignages</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 60px 56px;">
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Témoignages</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:56px; font-weight:700; letter-spacing:-0.05em; line-height:1; margin-top:12px;">Ce que disent nos clients</div>
+        <div style="font-size:16px; line-height:1.7; color:#9AA2B4; margin-top:14px; max-width:70ch;">Les avis sont publiés depuis l'administration, après votre validation.</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px;">
+          <sc-for list="{{ avis }}" as="a" hint-placeholder-count="6">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:26px; display:flex; flex-direction:column; gap:18px; height:230px;">
+              <div style="color:#FFB84D; font-size:14px; letter-spacing:3px;">★★★★★</div>
+              <div style="font-size:15.5px; line-height:1.7; color:#D4D9E3;">{{ a.quote }}</div>
+              <div style="display:flex; align-items:center; gap:11px; margin-top:auto;">
+                <div style="width:36px; height:36px; border-radius:50%; border:1px dashed rgba(255,255,255,0.18);"></div>
+                <div><div style="font-size:14.5px; font-weight:600;">{{ a.name }}</div><div style="font-size:12.5px; color:#6B7183;">{{ a.role }}</div></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:28px; display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:22px;">
+          <div><div style="font-size:16px; font-weight:600;">Vous avez travaillé avec nous ?</div><div style="font-size:14px; color:#8B93A7; margin-top:6px;">Laissez un avis sur notre fiche Google Business.</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.16); font-size:14px; font-weight:600; padding:13px 24px; border-radius:999px; white-space:nowrap;">Écrire un avis</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">06 · Blog</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/blog · /blog/[slug]</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 60px 56px;">
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Blog</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:56px; font-weight:700; letter-spacing:-0.05em; line-height:1; margin-top:12px;">Conseils et actualités</div>
+        <div style="font-size:16px; line-height:1.7; color:#9AA2B4; margin-top:14px; max-width:70ch;">Un article par mois suffit à faire progresser le site dans les résultats de recherche.</div>
+        <div style="display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:18px; overflow:hidden; margin-top:32px;">
+          <sc-for list="{{ articles }}" as="a" hint-placeholder-count="3">
+            <div style="background:#0A0C11; padding:26px; display:flex; gap:24px; align-items:baseline;">
+              <div style="font-size:12px; color:#5A6072; min-width:100px; letter-spacing:0.08em; text-transform:uppercase;">{{ a.date }}</div>
+              <div style="flex:1;">
+                <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.03em;">{{ a.title }}</div>
+                <div style="font-size:14.5px; line-height:1.6; color:#8B93A7; margin-top:7px;">{{ a.desc }}</div>
+              </div>
+              <div style="font-size:13px; color:#4F7CFF; white-space:nowrap;">Lire →</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072; margin-top:44px;">Gabarit article — /blog/[slug]</div>
+        <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:36px 60px; margin-top:16px;">
+          <div style="font-size:12.5px; color:#6B7183;">Publié le 12 septembre 2026 · Brandon MEDEHOU</div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:38px; font-weight:700; letter-spacing:-0.045em; line-height:1.06; margin-top:12px;">Combien coûte un site internet au Bénin ?</div>
+          <div style="height:180px; border:1px dashed rgba(255,255,255,0.14); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:13px; margin-top:22px;">Image de couverture</div>
+          <div style="font-size:16px; line-height:1.85; color:#B4BCCC; margin-top:22px;">Corps de l'article en une colonne large de 70 caractères environ, avec intertitres, listes et citations. Le contenu est saisi depuis l'espace d'administration et rendu côté serveur pour le référencement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">07 · Contact</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/contact</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 60px 56px; display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start;">
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <div>
+            <div style="font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color:#5A6072;">Contact</div>
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:48px; font-weight:700; letter-spacing:-0.05em; line-height:1; margin-top:12px;">Parlons de votre projet</div>
+            <div style="font-size:16px; line-height:1.7; color:#9AA2B4; margin-top:14px;">Nous revenons vers vous sous 24 h ouvrées avec une première estimation.</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:16px; overflow:hidden;">
+            <sc-for list="{{ coords }}" as="c" hint-placeholder-count="4">
+              <div style="background:#0A0C11; padding:18px 22px;"><div style="font-size:12px; color:#6B7183; margin-bottom:4px;">{{ c.k }}</div><div style="font-size:15px; font-weight:600; line-height:1.5;">{{ c.v }}</div></div>
+            </sc-for>
+          </div>
+          <div style="border:1px dashed rgba(255,255,255,0.16); border-radius:16px; height:190px; display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:13.5px;">Carte Google Maps</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.11); border-radius:20px; background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.012)); padding:30px; display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:21px; font-weight:700; letter-spacing:-0.03em;">Demande de devis</div>
+          <sc-for list="{{ champs }}" as="f" hint-placeholder-count="4">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div style="font-size:13px; color:#9AA2B4;">{{ f.label }}</div>
+              <div style="{{ f.box }}">{{ f.ph }}</div>
+            </div>
+          </sc-for>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:13px; color:#9AA2B4;">Pôle concerné</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <div style="font-size:13px; padding:9px 14px; border-radius:999px; border:1px solid #4F7CFF; background:rgba(79,124,255,0.18);">Développement web &amp; informatique</div>
+              <div style="font-size:13px; padding:9px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.13); color:#9AA2B4;">Ingénierie &amp; bâtiment</div>
+            </div>
+          </div>
+          <div style="background:#4F7CFF; color:#fff; font-size:14.5px; font-weight:600; padding:14px; border-radius:999px; text-align:center; box-shadow:0 12px 36px rgba(79,124,255,0.3);">Envoyer la demande</div>
+          <div style="font-size:12px; line-height:1.55; color:#6B7183;">Envoi vers la table <span style="font-family:monospace; color:#9CB4FF;">quote_requests</span> + e-mail de notification, avec protection anti-spam. Vos informations ne sont ni cédées ni vendues.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">08 · Mentions légales</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/mentions-legales</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; padding:44px 240px 56px;">
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:44px; font-weight:700; letter-spacing:-0.05em;">Mentions légales</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.03em; margin-top:28px;">Éditeur du site</div>
+        <div style="font-size:15.5px; line-height:1.75; color:#B4BCCC; margin-top:10px;">Le présent site est édité par BRANDYBEN, entreprise individuelle immatriculée (immatriculation RCCM en cours) dont le siège est situé Quartier Agontinkon, Îlot 1270, Parcelle D, 8ème arrondissement, Cotonou, Bénin.</div>
+        <div style="display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.09); border-radius:16px; overflow:hidden; margin-top:24px;">
+          <sc-for list="{{ legal }}" as="l" hint-placeholder-count="9">
+            <div style="background:#0A0C11; padding:14px 20px; display:flex; gap:20px;">
+              <div style="font-size:13px; color:#6B7183; min-width:210px;">{{ l.k }}</div>
+              <div style="font-size:14.5px; font-weight:500; flex:1;">{{ l.v }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.03em; margin-top:32px;">Hébergement</div>
+        <div style="font-size:15.5px; line-height:1.75; color:#B4BCCC; margin-top:10px;">Le site est hébergé par : [nom de l'hébergeur, adresse et contact à compléter selon le prestataire retenu].</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.03em; margin-top:28px;">Propriété intellectuelle</div>
+        <div style="font-size:15.5px; line-height:1.75; color:#B4BCCC; margin-top:10px;">L'ensemble des contenus présents sur ce site (textes, images, logo, graphismes) est la propriété de BRANDYBEN, sauf mention contraire, et ne peut être reproduit sans autorisation préalable.</div>
+        <div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.03em; margin-top:28px;">Protection des données personnelles</div>
+        <div style="font-size:15.5px; line-height:1.75; color:#B4BCCC; margin-top:10px;">Les informations recueillies via les formulaires du site (nom, e-mail, téléphone) sont utilisées uniquement pour répondre aux demandes de contact et ne sont ni cédées ni vendues à des tiers. Toute personne dispose d'un droit d'accès, de rectification et de suppression de ses données en écrivant à brandonmedehou2203@gmail.com.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const box = 'font-size:14px; padding:12px 14px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072;';
+    const labels = ['Accueil', 'À propos', 'Services', 'Réalisations', 'Témoignages', 'Blog', 'Contact'];
+    const clients = ['Votre client 01', 'Votre client 02', 'Votre client 03', 'Votre client 04', 'Votre client 05', 'Votre client 06'];
+    return {
+      nav: labels.map((label, i) => ({
+        label,
+        style: 'font-size:12.5px; padding:8px 11px; border-radius:999px; color:' + (i === 0 ? '#F2F4F8' : '#8B93A7') + '; background:' + (i === 0 ? 'rgba(255,255,255,0.07)' : 'transparent') + ';',
+      })),
+      navFooter: labels.map(label => ({ label })),
+      stats: [
+        { value: '02', label: 'Pôles d\'activité sous une même structure' },
+        { value: '24 h', label: 'Délai de réponse à une demande de devis' },
+        { value: '100 %', label: 'Projets suivis par un fondateur, sans intermédiaire' },
+        { value: 'Cotonou', label: 'Sur place et à distance dans la sous-région' },
+      ],
+      marquee: clients.concat(clients).map(label => ({ label })),
+      tags1: ['Sites vitrine', 'E-commerce', 'Logiciels métier', 'Applications'].map(label => ({ label })),
+      tags2: ['Plans d\'exécution', 'Dessin de projet', 'Métrés', 'Suivi de chantier'].map(label => ({ label })),
+      atouts: [
+        { num: '01', title: 'Réactivité', desc: 'Réponse sous 24 h ouvrées et un interlocuteur unique du devis à la mise en ligne.' },
+        { num: '02', title: 'Proximité', desc: 'Basés à Cotonou, nous nous déplaçons chez vous et travaillons aussi à distance.' },
+        { num: '03', title: 'Tarifs adaptés', desc: 'Des budgets calibrés pour les TPE, associations et indépendants.' },
+        { num: '04', title: 'Deux métiers', desc: 'Numérique et bâti dans la même structure : un seul contact.' },
+      ],
+      etapes: [
+        { num: '01', title: 'Cadrage', desc: 'Nous clarifions votre besoin, vos contenus et vos objectifs.', duree: '1 semaine' },
+        { num: '02', title: 'Maquettes', desc: 'Proposition de design, allers-retours et validation avec vous.', duree: '1 à 2 semaines' },
+        { num: '03', title: 'Développement', desc: 'Intégration des pages, des fonctionnalités et de vos contenus.', duree: '2 à 3 semaines' },
+        { num: '04', title: 'Tests et mise en ligne', desc: 'Vérifications techniques, mobile, formulaires, puis publication.', duree: '1 semaine' },
+      ],
+      equipe: [
+        { name: 'Brandon MEDEHOU', role: 'Cofondateur — Développement web & informatique', roleStyle: 'font-size:13px; font-weight:600; color:#4F7CFF;', desc: 'Conception et développement de sites, logiciels et applications. Pilotage des projets et relation client.' },
+        { name: 'Bennett MEDEHOU', role: 'Cofondateur — Dessinateur projeteur bâtiment, technicien supérieur en génie civil', roleStyle: 'font-size:13px; font-weight:600; color:#FFB84D;', desc: 'Plans, dessins de projet et études techniques du bâtiment. Suivi de la partie ingénierie et génie civil.' },
+      ],
+      valeurs: [
+        { title: 'Qualité', desc: 'Un travail livré fini, testé et documenté, pas une version approximative.' },
+        { title: 'Réactivité', desc: 'Des réponses rapides et des délais annoncés qui sont tenus.' },
+        { title: 'Accompagnement', desc: 'Nous expliquons nos choix techniques dans un langage clair.' },
+      ],
+      pole1: [
+        { title: 'Sites internet', desc: 'Sites vitrine, catalogues et boutiques en ligne, pensés pour le mobile en priorité.', benefit: 'Une présence en ligne crédible et trouvable sur Google.' },
+        { title: 'Logiciels et applications', desc: 'Outils métier, applications de gestion et solutions mobiles.', benefit: 'Moins de tâches manuelles, des données fiables.' },
+        { title: 'Maintenance et conseil', desc: 'Reprise d\'un site existant, sécurité, performances, accompagnement digital.', benefit: 'Un site qui reste rapide, sûr et à jour.' },
+      ],
+      pole2: [
+        { title: 'Dessin de projet bâtiment', desc: 'Plans d\'architecture, plans d\'exécution et pièces graphiques pour vos projets de construction.', benefit: 'Des documents exploitables directement sur chantier.' },
+        { title: 'Études et assistance technique', desc: 'Études de génie civil, métrés, notes techniques et appui au suivi de chantier.', benefit: 'Des choix techniques justifiés et des coûts maîtrisés.' },
+      ],
+      filtres: ['Tous', 'Sites', 'Applications', 'Bâtiment'].map((label, i) => ({
+        label,
+        style: 'font-size:13px; padding:9px 15px; border-radius:999px; border:1px solid ' + (i === 0 ? '#4F7CFF' : 'rgba(255,255,255,0.13)') + '; color:' + (i === 0 ? '#fff' : '#9AA2B4') + '; background:' + (i === 0 ? 'rgba(79,124,255,0.18)' : 'transparent') + ';',
+      })),
+      projets: [1, 2, 3, 4, 5, 6].map(n => ({
+        image: n === 6 ? 'Plan ou photo de chantier' : 'Capture d\'écran',
+        tag: n === 6 ? 'Bâtiment' : (n % 2 ? 'Site vitrine' : 'Application'),
+        tagStyle: 'font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:' + (n === 6 ? '#FFB84D' : '#4F7CFF') + ';',
+        title: 'Nom du projet ' + n,
+        desc: 'Besoin du client, ce qui a été livré, résultat obtenu.',
+      })),
+      avis: [
+        { quote: 'Remplacez par l\'avis réel du client : ce qu\'il cherchait et ce qu\'il a obtenu.', name: 'Nom du client', role: 'Fonction, entreprise' },
+        { quote: 'Un avis court et concret vaut mieux qu\'un long paragraphe.', name: 'Nom du client', role: 'Fonction, entreprise' },
+        { quote: 'Demandez l\'autorisation de publier le nom et le logo de la structure.', name: 'Nom du client', role: 'Fonction, entreprise' },
+        { quote: 'Trois à six avis suffisent : au-delà, la page perd en lisibilité.', name: 'Nom du client', role: 'Fonction, entreprise' },
+        { quote: 'Une note sur cinq étoiles renforce la crédibilité de la page.', name: 'Nom du client', role: 'Fonction, entreprise' },
+        { quote: 'Les avis se gèrent depuis l\'administration, avec statut publié ou masqué.', name: 'Nom du client', role: 'Fonction, entreprise' },
+      ],
+      articles: [
+        { date: 'À publier', title: 'Combien coûte un site internet au Bénin ?', desc: 'Nom de domaine, hébergement, conception, contenus et maintenance.' },
+        { date: 'À publier', title: 'Site vitrine ou boutique en ligne : comment choisir', desc: 'Les questions à se poser avant de lancer un projet.' },
+        { date: 'À publier', title: 'Cinq erreurs fréquentes sur les plans d\'exécution', desc: 'Ce qui ralentit un chantier et comment l\'éviter.' },
+      ],
+      coords: [
+        { k: 'Téléphone', v: '+229 01 53 72 90 10' },
+        { k: 'E-mail', v: 'brandonmedehou2203@gmail.com' },
+        { k: 'Adresse', v: 'Quartier Agontinkon, Îlot 1270, Parcelle D — 8ᵉ arr., Cotonou' },
+        { k: 'Horaires', v: 'Lundi – samedi, 8 h – 18 h' },
+      ],
+      champs: [
+        { label: 'Nom complet', ph: 'Votre nom', box: box },
+        { label: 'E-mail', ph: 'vous@exemple.com', box: box },
+        { label: 'Téléphone', ph: '+229 ...', box: box },
+        { label: 'Votre message', ph: 'Décrivez votre projet, vos délais et votre budget indicatif.', box: box + ' height:90px;' },
+      ],
+      legal: [
+        { k: 'Nom commercial', v: 'BRANDYBEN' },
+        { k: 'Cofondateurs', v: 'Brandon MEDEHOU et Bennett MEDEHOU' },
+        { k: 'Directeur de la publication', v: 'Brandon MEDEHOU' },
+        { k: 'Forme juridique', v: 'Entreprise individuelle' },
+        { k: 'Numéro IFU', v: '0202212868410' },
+        { k: 'Numéro RCCM', v: '[à compléter dès délivrance]' },
+        { k: 'Adresse', v: 'Quartier Agontinkon, Îlot 1270, Parcelle D, 8ème arrondissement, Cotonou, Littoral, Bénin' },
+        { k: 'Téléphone', v: '+229 01 53 72 90 10' },
+        { k: 'E-mail', v: 'brandonmedehou2203@gmail.com' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
