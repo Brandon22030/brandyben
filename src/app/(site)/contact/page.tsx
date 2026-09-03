@@ -58,12 +58,6 @@ export default async function ContactPage() {
             <p className="text-[16px] font-semibold text-bone">{horaires}</p>
           </div>
         </Reveal>
-
-        <Reveal delay={140}>
-          <div className="flex h-[200px] items-center justify-center rounded-[18px] border border-dashed border-white/[0.16] text-[14px] text-[#5A6072]">
-            Carte Google Maps
-          </div>
-        </Reveal>
       </div>
 
       <Reveal delay={100}>

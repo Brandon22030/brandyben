@@ -4,7 +4,7 @@ export function Logo({ size = 32, mono = false }: { size?: number; mono?: boolea
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN">
       <path d="M100 96A70 70 0 0 0 30 26" stroke={ink} strokeWidth={sw} strokeLinecap="round" />
-      <circle cx="30" cy="96" r={sw} fill={ink} />
+      <circle cx="30" cy="96" r={sw} fill={"#4F7CFF"} />
       <circle cx="30" cy="26" r={Math.round(sw * 0.82)} fill={mono ? "currentColor" : "#FFB84D"} />
     </svg>
   );
