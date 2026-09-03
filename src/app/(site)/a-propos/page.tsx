@@ -41,7 +41,7 @@ const VALEURS = [
 const CONFIANCE = [
   { label: "Forme juridique", value: "Entreprise individuelle" },
   { label: "Numéro IFU", value: "0202212868410" },
-  { label: "Numéro RCCM", value: "En cours d'attribution" },
+  { label: "Numéro RCCM", value: "RB/COT/26 A 119853" },
   { label: "Zone d'intervention", value: "Cotonou et à distance" },
 ];
 

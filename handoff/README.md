@@ -20,7 +20,7 @@ Informations légales à afficher :
 
 - Forme juridique : entreprise individuelle
 - Numéro IFU : `0202212868410`
-- Numéro RCCM : en cours d'attribution (à saisir depuis l'admin dès délivrance)
+- Numéro RCCM : RB/COT/26 A 119853
 - Siège : Quartier Agontinkon, Îlot 1270, Parcelle D, 8ème arrondissement, Cotonou, Littoral, Bénin (von, derrière l'école Pigier)
 - Téléphone : `+229 01 53 72 90 10`
 - E-mail : `brandonmedehou2203@gmail.com`
