@@ -20,7 +20,7 @@ export async function sendQuoteNotification(quote: {
   const resend = new Resend(apiKey);
   const poleLabels: Record<Pole, string> = {
     dev: "Développement web & informatique",
-    batiment: "Ingénierie & bâtiment",
+    batiment: "Architecture & BTP",
     indetermine: "Je ne sais pas encore",
   };
   const pole = poleLabels[quote.pole];

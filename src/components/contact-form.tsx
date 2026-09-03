@@ -11,7 +11,7 @@ const inputClass =
 
 const POLE_CHOICES: { value: Pole; label: string }[] = [
   { value: "dev", label: "Développement web & informatique" },
-  { value: "batiment", label: "Ingénierie & bâtiment" },
+  { value: "batiment", label: "Architecture & BTP" },
   { value: "indetermine", label: "Je ne sais pas encore" },
 ];
 
