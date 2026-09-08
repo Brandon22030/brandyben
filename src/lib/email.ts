@@ -29,11 +29,11 @@ export async function sendQuoteNotification(quote: {
     await resend.emails.send({
       from,
       to,
-      subject: `Nouvelle demande de devis — ${quote.nom}`,
+      subject: `Nouvelle demande de devis - ${quote.nom}`,
       text: [
         `Nom : ${quote.nom}`,
         `E-mail : ${quote.email}`,
-        `Téléphone : ${quote.telephone || "—"}`,
+        `Téléphone : ${quote.telephone || "-"}`,
         `Pôle concerné : ${pole}`,
         "",
         quote.message,

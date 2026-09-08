@@ -53,7 +53,7 @@ export default async function AdminProjectsPage() {
               </div>
               <p className="mt-2 text-[14.5px] font-semibold text-bone">{project.titre}</p>
               <p className="text-[12.5px] text-cool">
-                {(project.clients as unknown as { nom: string } | null)?.nom ?? "—"}
+                {(project.clients as unknown as { nom: string } | null)?.nom ?? "-"}
               </p>
               <div className="mt-3 flex gap-3 text-[12.5px]">
                 <Link href={`/admin/projets/${project.id}`} className="text-signal">

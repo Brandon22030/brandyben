@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#101216; }
+a { color:#4F7CFF; text-decoration:none; } a:hover { color:#8AA6FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Instrument Sans',sans-serif; color:#F2F4F8; background:#101216; padding:56px 48px 96px;">
+  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:44px; max-width:900px;">
+    <div style="font-family:'Instrument Sans',sans-serif; font-size:44px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Écrans - produits digitaux</div>
+    <div style="font-size:16px; line-height:1.65; color:#9AA2B4;">Page vitrine des produits digitaux (e-books, modèles) sur brandyben.com. Chaque fiche renvoie vers la page de vente Chariow existante pour le paiement et la livraison. L'admin sert à gérer le titre, le prix, l'image et le lien Chariow de chaque produit.</div>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start;">
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">01 · Boutique</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/produits</div></div>
+      <div style="width:1200px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B;">
+
+        <div style="position:relative; padding:18px 28px;">
+          <div style="position:absolute; top:-200px; right:-100px; width:760px; height:520px; background:radial-gradient(ellipse at center,rgba(255,184,77,0.18),transparent 62%); filter:blur(30px);"></div>
+          <div style="position:relative; display:flex; align-items:center; justify-content:space-between; border:1px solid rgba(255,255,255,0.09); border-radius:999px; background:rgba(14,16,22,0.72); padding:8px 8px 8px 18px;">
+            <div style="display:flex; align-items:center; gap:9px;">
+              <svg width="22" height="22" viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN"><path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path><circle cx="30" cy="96" r="12" fill="#4F7CFF"></circle><circle cx="30" cy="26" r="10" fill="#FFB84D"></circle></svg>
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:17px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:4px;">
+              <sc-for list="{{ nav }}" as="n" hint-placeholder-count="8"><div style="{{ n.style }}">{{ n.label }}</div></sc-for>
+              <div style="background:#F2F4F8; color:#07080B; font-size:12.5px; font-weight:600; padding:9px 16px; border-radius:999px; margin-left:6px;">Demander un devis</div>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative; padding:40px 60px 0; display:flex; flex-direction:column; gap:16px; max-width:820px;">
+          <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:9px; border:1px solid rgba(255,184,77,0.35); border-radius:999px; padding:7px 15px; background:rgba(255,184,77,0.09); font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#FFCF8A;"><span style="width:6px; height:6px; border-radius:50%; background:#FFB84D;"></span>Boutique - téléchargement immédiat</div>
+          <div style="font-family:'Instrument Sans',sans-serif; font-size:64px; font-weight:700; letter-spacing:-0.05em; line-height:0.98;">Produits digitaux</div>
+          <div style="font-size:18px; line-height:1.65; color:#9AA2B4; max-width:60ch;">Des ressources digitales pensées par un dev, pour construire des projets solides et gagner du temps. Guides et modèles téléchargeables, payables par Mobile Money et livrés par e-mail en quelques secondes.</div>
+        </div>
+        <div style="padding:36px 60px 0;">
+          <div style="display:grid; grid-template-columns:420px 1fr; gap:36px; border:1px solid rgba(255,255,255,0.11); border-radius:22px; background:linear-gradient(140deg,rgba(79,124,255,0.14),rgba(255,184,77,0.06) 65%,rgba(255,255,255,0.02)); padding:32px;">
+            <div style="border:1px dashed rgba(255,255,255,0.18); border-radius:16px; background:#0B0D13; height:320px; display:flex; align-items:center; justify-content:center; text-align:center; color:#5A6072; font-size:13px; padding:20px;">Visuel de couverture<br>du produit vedette</div>
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:#FFB84D;">Le plus vendu</div>
+              <div style="font-family:'Instrument Sans',sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.04em; line-height:1.08;">Le Guide pour créer des sites pro gratuitement avec l'IA et trouver tes premiers clients en 07 jours</div>
+              <div style="font-size:15.5px; line-height:1.7; color:#B4BCCC;">Le guide simple et efficace pour créer des sites web professionnels et gagner tes premiers revenus en ligne, même sans expérience et même sans capital de départ.</div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <sc-for list="{{ badges }}" as="b" hint-placeholder-count="3"><div style="border:1px solid rgba(255,255,255,0.14); border-radius:999px; padding:6px 13px; font-size:12.5px; color:#C3C9D6;">{{ b.label }}</div></sc-for>
+              </div>
+              <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,255,255,0.10);">
+                <div style="display:flex; align-items:baseline; gap:10px; white-space:nowrap;">
+                  <div style="font-family:'Instrument Sans',sans-serif; font-size:36px; font-weight:700; letter-spacing:-0.04em; white-space:nowrap;">5 000 FCFA</div>
+                  <div style="font-size:16px; color:#6B7183; text-decoration:line-through; white-space:nowrap;">10 000 FCFA</div>
+                </div>
+                <div style="background:#4F7CFF; color:#fff; font-size:15px; font-weight:600; padding:14px 28px; border-radius:999px; box-shadow:0 12px 40px rgba(79,124,255,0.35); white-space:nowrap;">Acheter sur Chariow ↗</div>
+                <div style="font-size:13px; color:#8B93A7; white-space:nowrap;">Paiement et téléchargement gérés sur Chariow</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:44px 60px 0;">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px;">
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:32px; font-weight:700; letter-spacing:-0.04em;">Tout le catalogue</div>
+            <div style="display:flex; gap:8px;"><sc-for list="{{ filtres }}" as="f" hint-placeholder-count="3"><div style="{{ f.style }}">{{ f.label }}</div></sc-for></div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;">
+            <sc-for list="{{ produits }}" as="p" hint-placeholder-count="3">
+              <div style="border:1px solid rgba(255,255,255,0.10); border-radius:18px; overflow:hidden; background:rgba(255,255,255,0.028); display:flex; flex-direction:column;">
+                <div style="height:170px; background:radial-gradient(ellipse at 50% 0%,rgba(79,124,255,0.12),transparent 70%),#0B0D13; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:12.5px;">Image du produit</div>
+                <div style="padding:20px; display:flex; flex-direction:column; gap:9px; flex:1;">
+                  <div style="{{ p.tagStyle }}">{{ p.tag }}</div>
+                  <div style="font-family:'Instrument Sans',sans-serif; font-size:18px; font-weight:700; letter-spacing:-0.03em; line-height:1.25;">{{ p.title }}</div>
+                  <div style="font-size:13.5px; line-height:1.6; color:#8B93A7;">{{ p.desc }}</div>
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:16px;">
+                    <div style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.03em;">{{ p.prix }}</div>
+                    <div style="font-size:13px; font-weight:600; border:1px solid rgba(255,255,255,0.16); border-radius:999px; padding:10px 18px;">Acheter sur Chariow ↗</div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="padding:44px 60px 56px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; border:1px solid rgba(255,255,255,0.10); border-radius:18px; background:rgba(255,255,255,0.028); padding:24px 28px;">
+            <div style="font-size:15px; color:#B4BCCC;">Chaque fiche renvoie vers la page de vente Chariow correspondante</div>
+            <div style="font-size:13px; font-weight:600; color:#9CB4FF;">brandyben.mychariow.shop ↗</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;"><div style="font-family:'Instrument Sans',sans-serif; font-size:20px; font-weight:700;">02 · Admin - Produits</div><div style="font-size:12.5px; color:#6B7183; font-family:monospace;">/admin/produits</div></div>
+      <div style="width:1400px; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:14px; background:#07080B; display:flex;">
+        <div style="width:236px; border-right:1px solid rgba(255,255,255,0.09); background:#0A0C11; padding:22px 16px;">
+          <div style="display:flex; align-items:center; gap:9px; padding:0 8px 20px;">
+            <svg width="22" height="22" viewBox="0 0 120 120" fill="none" aria-label="BRANDYBEN"><path d="M100 96A70 70 0 0 0 30 26" stroke="#F2F4F8" stroke-width="12" stroke-linecap="round"></path><circle cx="30" cy="96" r="12" fill="#4F7CFF"></circle><circle cx="30" cy="26" r="10" fill="#FFB84D"></circle></svg>
+            <div style="font-family:'Instrument Sans',sans-serif; font-size:16px; font-weight:700; letter-spacing:-0.05em;">BRANDYBEN</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><sc-for list="{{ navAdmin }}" as="n" hint-placeholder-count="6"><div style="{{ n.style }}">{{ n.label }}</div></sc-for></div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.09); padding:18px 28px; display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-family:'Instrument Sans',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.035em;">Produits digitaux</div><div style="font-size:13px; color:#6B7183; margin-top:3px;">4 produits · 1 publié</div></div>
+            <div style="font-size:13px; font-weight:600; padding:10px 18px; background:#4F7CFF; border-radius:10px;">+ Nouveau produit</div>
+          </div>
+          <div style="padding:24px 28px; display:grid; grid-template-columns:1.3fr 1fr; gap:20px;">
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:14px; overflow:hidden;">
+              <div style="display:grid; grid-template-columns:2.2fr 1fr 1fr 90px; gap:12px; padding:13px 18px; background:rgba(255,255,255,0.04); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7183;"><div>Produit</div><div>Prix</div><div>Statut</div><div></div></div>
+              <sc-for list="{{ produitsAdmin }}" as="p" hint-placeholder-count="4">
+                <div style="{{ p.rowStyle }}">
+                  <div style="font-size:13.5px; font-weight:500;">{{ p.title }}</div>
+                  <div style="font-size:13px; color:#9AA2B4;">{{ p.prix }}</div>
+                  <div style="{{ p.statutStyle }}">{{ p.statut }}</div>
+                  <div style="font-size:12.5px; color:#4F7CFF; text-align:right;">Éditer</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="border:1px solid rgba(255,255,255,0.10); border-radius:14px; background:rgba(255,255,255,0.028); padding:24px; display:flex; flex-direction:column; gap:14px;">
+              <div style="font-size:15px; font-weight:600;">Fiche produit - édition</div>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:12.5px; color:#9AA2B4;">Image du produit (affichée sur la card)</div>
+                <div style="border:1px dashed rgba(255,255,255,0.18); border-radius:10px; background:rgba(255,255,255,0.02); height:110px; display:flex; align-items:center; justify-content:center; color:#5A6072; font-size:12.5px;">Glisser une image ou parcourir</div>
+              </div>
+              <sc-for list="{{ champsAdmin }}" as="f" hint-placeholder-count="5">
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                  <div style="font-size:12.5px; color:#9AA2B4;">{{ f.label }}</div>
+                  <div style="{{ f.box }}">{{ f.ph }}</div>
+                </div>
+              </sc-for>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; border-top:1px solid rgba(255,255,255,0.08); padding-top:14px; margin-top:4px;">
+                <div style="font-size:12.5px; color:#9AA2B4;">Visible sur /produits</div>
+                <div style="width:38px; height:22px; border-radius:999px; background:#4F7CFF; position:relative;"><div style="position:absolute; top:2px; right:2px; width:18px; height:18px; border-radius:50%; background:#fff;"></div></div>
+              </div>
+              <div style="background:#4F7CFF; color:#fff; font-size:14px; font-weight:600; padding:13px; border-radius:10px; text-align:center; margin-top:6px;">Enregistrer et publier</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const labels = ['Accueil', 'À propos', 'Services', 'Produits', 'Réalisations', 'Témoignages', 'Blog', 'Contact'];
+    const adminLabels = ['Tableau de bord', 'Clients', 'Réalisations', 'Produits', 'Demandes de devis', 'Paramètres'];
+    const box = 'font-size:13.5px; padding:11px 13px; border:1px solid rgba(255,255,255,0.13); border-radius:10px; background:rgba(255,255,255,0.03); color:#5A6072;';
+
+    const produits = [
+      { title: 'Le Guide - créer des sites pro avec l\'IA', tag: 'E-book', prix: '5 000 FCFA', desc: 'Créer des sites web professionnels et gagner ses premiers revenus en ligne, sans expérience ni capital.', statut: 'Publié' },
+      { title: 'Titre du produit 02', tag: 'Prochain produit', prix: 'Prix à définir', desc: 'Décrivez en deux phrases le problème résolu et le résultat obtenu par l\'acheteur.', statut: 'Brouillon' },
+      { title: 'Titre du produit 03', tag: 'Prochain produit', prix: 'Prix à définir', desc: 'Décrivez en deux phrases le problème résolu et le résultat obtenu par l\'acheteur.', statut: 'Brouillon' },
+    ];
+
+    return {
+      nav: labels.map(label => ({ label, style: 'font-size:12.5px; padding:8px 11px; border-radius:999px; color:' + (label === 'Produits' ? '#F2F4F8' : '#8B93A7') + '; background:' + (label === 'Produits' ? 'rgba(255,255,255,0.07)' : 'transparent') + ';' })),
+      navAdmin: adminLabels.map(label => ({ label, style: 'font-size:13.5px; padding:10px 12px; border-radius:9px; color:' + (label === 'Produits' ? '#F2F4F8' : '#8B93A7') + '; background:' + (label === 'Produits' ? 'rgba(79,124,255,0.16)' : 'transparent') + ';' })),
+      badges: ['E-book PDF', 'Niveau débutant', 'Mise à jour incluse'].map(label => ({ label })),
+      filtres: ['Tous', 'E-books', 'Modèles'].map((label, i) => ({ label, style: 'font-size:13px; padding:9px 15px; border-radius:999px; border:1px solid ' + (i === 0 ? '#4F7CFF' : 'rgba(255,255,255,0.13)') + '; color:' + (i === 0 ? '#fff' : '#9AA2B4') + '; background:' + (i === 0 ? 'rgba(79,124,255,0.18)' : 'transparent') + ';' })),
+      produits: produits.map((p, i) => Object.assign({}, p, { tagStyle: 'font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:' + (i === 0 ? '#FFB84D' : '#4F7CFF') + ';' })),
+
+      produitsAdmin: produits.map((p, i) => ({
+        title: p.title, prix: p.prix, statut: p.statut,
+        rowStyle: 'display:grid; grid-template-columns:2.2fr 1fr 1fr 90px; gap:12px; padding:15px 18px; border-top:1px solid rgba(255,255,255,0.06); align-items:center;' + (i === 0 ? ' background:rgba(79,124,255,0.08);' : ''),
+        statutStyle: 'font-size:11.5px; padding:5px 11px; border-radius:999px; white-space:nowrap; ' + (p.statut === 'Publié' ? 'color:#8FE3C0; background:rgba(0,180,120,0.12); border:1px solid rgba(0,180,120,0.3);' : 'color:#9AA2B4; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);'),
+      })),
+      champsAdmin: [
+        { label: 'Titre du produit', ph: 'Le Guide pour créer des sites pro...', box },
+        { label: 'Type', ph: 'E-book PDF', box },
+        { label: 'Prix (FCFA)', ph: '5000', box },
+        { label: 'Description courte', ph: 'Une phrase qui résume la promesse du produit.', box },
+        { label: 'Lien Chariow', ph: 'https://brandyben.mychariow.shop/prd_...', box },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

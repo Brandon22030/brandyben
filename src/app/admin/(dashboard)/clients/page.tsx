@@ -71,8 +71,8 @@ export default async function AdminClientsPage() {
                       <span className="text-bone">{client.nom}</span>
                     </div>
                   </td>
-                  <td className="px-5 py-3 text-cool">{client.secteur ?? "—"}</td>
-                  <td className="px-5 py-3 text-cool">{client.email ?? client.contact ?? "—"}</td>
+                  <td className="px-5 py-3 text-cool">{client.secteur ?? "-"}</td>
+                  <td className="px-5 py-3 text-cool">{client.email ?? client.contact ?? "-"}</td>
                   <td className="px-5 py-3 text-cool">{projectCount.get(client.id) ?? 0}</td>
                   <td className="px-5 py-3 text-cool">
                     {client.visible_sur_site ? "Oui" : "Non"}

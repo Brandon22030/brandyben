@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 const EQUIPE = [
   {
     nom: "Brandon MEDEHOU",
-    role: "Cofondateur — Développement web & informatique",
+    role: "Cofondateur - Développement web & informatique",
     roleColor: "text-signal",
     desc: "Conception et développement de sites, de logiciels et d'applications. Pilotage des projets et relation client.",
   },
   {
     nom: "Bennett MEDEHOU",
-    role: "Cofondateur — Dessinateur projeteur bâtiment, technicien supérieur en génie civil",
+    role: "Cofondateur - Dessinateur projeteur bâtiment, technicien supérieur en génie civil",
     roleColor: "text-amber",
     desc: "Plans, dessins de projet et études techniques du bâtiment. Suivi de la partie ingénierie et génie civil.",
   },

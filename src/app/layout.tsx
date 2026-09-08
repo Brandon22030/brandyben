@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "BRANDYBEN - Concevoir, coder, construire.",
-    template: "%s — BRANDYBEN",
+    template: "%s - BRANDYBEN",
   },
   description:
     "BRANDYBEN est le studio de deux frères jumeaux à Cotonou : sites, logiciels et applications sur mesure, plans et études techniques du bâtiment.",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "BRANDYBEN",
-    title: "BRANDYBEN — Concevoir, coder, construire.",
+    title: "BRANDYBEN - Concevoir, coder, construire.",
     description:
       "Sites, logiciels et applications sur mesure, plans et études techniques du bâtiment. Studio de deux frères jumeaux à Cotonou.",
     images: [{ url: "/logo-brandyben.png", width: 192, height: 192, alt: "BRANDYBEN" }],
   },
   twitter: {
     card: "summary",
-    title: "BRANDYBEN — Concevoir, coder, construire.",
+    title: "BRANDYBEN - Concevoir, coder, construire.",
     description:
       "Sites, logiciels et applications sur mesure, plans et études techniques du bâtiment. Studio de deux frères jumeaux à Cotonou.",
     images: ["/logo-brandyben.png"],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${instrumentSans.variable} ${jetBrainsMono.variable} h-full`}>
-      <body className="min-h-full bg-ink font-sans text-bone antialiased">{children}</body>
+      <body className="min-h-full overflow-x-hidden bg-ink font-sans text-bone antialiased">{children}</body>
     </html>
   );
 }

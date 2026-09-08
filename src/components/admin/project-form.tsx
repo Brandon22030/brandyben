@@ -77,7 +77,7 @@ export function ProjectForm({
             </Field>
             <Field label="Client">
               <Select name="client_id" defaultValue={project?.client_id ?? ""}>
-                <option value="">—</option>
+                <option value="">-</option>
                 {clients.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.nom}

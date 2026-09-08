@@ -56,7 +56,7 @@ export function TestimonialForm({
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Client">
             <Select name="client_id" defaultValue={testimonial?.client_id ?? ""}>
-              <option value="">—</option>
+              <option value="">-</option>
               {clients.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.nom}

@@ -163,6 +163,28 @@ export interface Database {
         Update: Partial<Database["public"]["Tables"]["etapes_methode"]["Row"]>;
         Relationships: [];
       };
+      products: {
+        Row: {
+          id: string;
+          titre: string;
+          categorie: PoleMetier;
+          prix: number | null;
+          prix_avant_promo: number | null;
+          description: string | null;
+          badges: string[];
+          image_url: string | null;
+          chariow_url: string | null;
+          statut: StatutContenu;
+          ordre: number;
+          created_at: string;
+        };
+        Insert: Partial<Database["public"]["Tables"]["products"]["Row"]> & {
+          titre: string;
+          categorie: PoleMetier;
+        };
+        Update: Partial<Database["public"]["Tables"]["products"]["Row"]>;
+        Relationships: [];
+      };
       settings: {
         Row: {
           id: number;

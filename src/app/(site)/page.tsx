@@ -84,7 +84,7 @@ export default async function HomePage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-5 py-[clamp(48px,7vw,110px)] pb-[clamp(60px,8vw,120px)] sm:px-[clamp(20px,4vw,40px)]">
+      <section className="relative px-5 py-[clamp(48px,7vw,110px)] pb-[clamp(60px,8vw,120px)] sm:px-[clamp(20px,4vw,40px)]">
         <GridBackdrop
           size={64}
           opacity={0.028}
@@ -154,7 +154,7 @@ export default async function HomePage() {
                   <span className="ml-3 text-[12px] text-[#5A6072]">brandyben.com</span>
                 </div>
                 <div className="flex aspect-[16/7] items-center justify-center bg-[radial-gradient(ellipse_at_50%_0%,rgba(79,124,255,0.10),transparent_65%)] px-6 text-center text-[14px] text-[#5A6072]">
-                  Emplacement — capture d&apos;un projet réalisé
+                  Emplacement - capture d&apos;un projet réalisé
                   <br />
                   <span className="text-[12.5px]">(remplacez par une image de votre portfolio)</span>
                 </div>
